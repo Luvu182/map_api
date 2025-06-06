@@ -1,0 +1,12 @@
+fastapi==0.104.1
+uvicorn==0.24.0
+supabase==2.15.2
+googlemaps==4.10.0
+python-dotenv==1.0.0
+pydantic==2.11.4
+redis==5.0.1
+celery==5.3.4
+httpx==0.28.1
+tenacity==8.2.3
+geopy==2.4.1
+# shapely==2.0.2  # Optional - requires GEOS library

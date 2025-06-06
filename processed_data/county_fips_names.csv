@@ -1,0 +1,324 @@
+fips,state_fips,county_name,state_abbr
+01073,01,Jefferson,AL
+01089,01,Madison,AL
+01097,01,Mobile,AL
+01101,01,Montgomery,AL
+01125,01,Tuscaloosa,AL
+02020,02,Anchorage Municipality,AK
+04003,04,Cochise,AZ
+04013,04,Maricopa,AZ
+04015,04,Mohave,AZ
+04019,04,Pima,AZ
+04025,04,Yavapai,AZ
+04027,04,Yuma,AZ
+05119,05,Pulaski,AR
+06001,06,Alameda,CA
+06007,06,Butte,CA
+06013,06,Contra Costa,CA
+06019,06,Fresno,CA
+06025,06,Imperial,CA
+06029,06,Kern,CA
+06037,06,Los Angeles,CA
+06041,06,Marin,CA
+06047,06,Merced,CA
+06053,06,Monterey,CA
+06059,06,Orange,CA
+06065,06,Riverside,CA
+06067,06,Sacramento,CA
+06071,06,San Bernardino,CA
+06073,06,San Diego,CA
+06075,06,San Francisco,CA
+06077,06,San Joaquin,CA
+06079,06,San Luis Obispo,CA
+06081,06,San Mateo,CA
+06083,06,Santa Barbara,CA
+06085,06,Santa Clara,CA
+06087,06,Santa Cruz,CA
+06089,06,Shasta,CA
+06095,06,Solano,CA
+06097,06,Sonoma,CA
+06099,06,Stanislaus,CA
+06107,06,Tulare,CA
+06111,06,Ventura,CA
+06113,06,Yolo,CA
+08001,08,Adams,CO
+08005,08,Arapahoe,CO
+08013,08,Boulder,CO
+08031,08,Denver,CO
+08041,08,El Paso,CO
+08059,08,Jefferson,CO
+08069,08,Larimer,CO
+08101,08,Pueblo,CO
+08123,08,Weld,CO
+09110,09,Capitol Planning Region,CT
+09170,09,South Central Connecticut Planning Region,CT
+09190,09,Western Connecticut Planning Region,CT
+11001,11,District of Columbia,DC
+12001,12,Alachua,FL
+12009,12,Brevard,FL
+12011,12,Broward,FL
+12021,12,Collier,FL
+12031,12,Duval,FL
+12033,12,Escambia,FL
+12053,12,Hernando,FL
+12057,12,Hillsborough,FL
+12071,12,Lee,FL
+12073,12,Leon,FL
+12083,12,Marion,FL
+12085,12,Martin,FL
+12086,12,Miami-Dade,FL
+12095,12,Orange,FL
+12097,12,Osceola,FL
+12099,12,Palm Beach,FL
+12101,12,Pasco,FL
+12103,12,Pinellas,FL
+12105,12,Polk,FL
+12115,12,Sarasota,FL
+12117,12,Seminole,FL
+12127,12,Volusia,FL
+13021,13,Bibb,GA
+13051,13,Chatham,GA
+13063,13,Clayton,GA
+13067,13,Cobb,GA
+13089,13,DeKalb,GA
+13095,13,Dougherty,GA
+13117,13,Forsyth,GA
+13121,13,Fulton,GA
+13135,13,Gwinnett,GA
+13139,13,Hall,GA
+13215,13,Muscogee,GA
+13245,13,Richmond,GA
+15003,15,Honolulu,HI
+16001,16,Ada,ID
+17031,17,Cook,IL
+17043,17,DuPage,IL
+17089,17,Kane,IL
+17097,17,Lake,IL
+17143,17,Peoria,IL
+17167,17,Sangamon,IL
+17197,17,Will,IL
+17201,17,Winnebago,IL
+18003,18,Allen,IN
+18035,18,Delaware,IN
+18089,18,Lake,IN
+18097,18,Marion,IN
+18141,18,St. Joseph,IN
+18157,18,Tippecanoe,IN
+18163,18,Vanderburgh,IN
+19113,19,Linn,IA
+19153,19,Polk,IA
+19163,19,Scott,IA
+19193,19,Woodbury,IA
+20045,20,Douglas,KS
+20091,20,Johnson,KS
+20173,20,Sedgwick,KS
+20177,20,Shawnee,KS
+20209,20,Wyandotte,KS
+21067,21,Fayette,KY
+21111,21,Jefferson,KY
+22017,22,Caddo Parish,LA
+22033,22,East Baton Rouge Parish,LA
+22051,22,Jefferson Parish,LA
+22055,22,Lafayette Parish,LA
+22071,22,Orleans Parish,LA
+23019,23,Penobscot,ME
+24003,24,Anne Arundel,MD
+24005,24,Baltimore,MD
+24031,24,Montgomery,MD
+24033,24,Prince George's,MD
+24510,24,Baltimore city,MD
+25005,25,Bristol,MA
+25009,25,Essex,MA
+25013,25,Hampden,MA
+25017,25,Middlesex,MA
+25021,25,Norfolk,MA
+25023,25,Plymouth,MA
+25025,25,Suffolk,MA
+25027,25,Worcester,MA
+26017,26,Bay,MI
+26049,26,Genesee,MI
+26065,26,Ingham,MI
+26077,26,Kalamazoo,MI
+26081,26,Kent,MI
+26099,26,Macomb,MI
+26125,26,Oakland,MI
+26145,26,Saginaw,MI
+26161,26,Washtenaw,MI
+26163,26,Wayne,MI
+27003,27,Anoka,MN
+27037,27,Dakota,MN
+27053,27,Hennepin,MN
+27109,27,Olmsted,MN
+27123,27,Ramsey,MN
+27137,27,St. Louis,MN
+28049,28,Hinds,MS
+29019,29,Boone,MO
+29077,29,Greene,MO
+29095,29,Jackson,MO
+29189,29,St. Louis,MO
+29510,29,St. Louis city,MO
+30063,30,Missoula,MT
+30111,30,Yellowstone,MT
+31055,31,Douglas,NE
+31109,31,Lancaster,NE
+31153,31,Sarpy,NE
+32003,32,Clark,NV
+32031,32,Washoe,NV
+33011,33,Hillsborough,NH
+33013,33,Merrimack,NH
+34003,34,Bergen,NJ
+34007,34,Camden,NJ
+34013,34,Essex,NJ
+34017,34,Hudson,NJ
+34023,34,Middlesex,NJ
+34025,34,Monmouth,NJ
+34029,34,Ocean,NJ
+34031,34,Passaic,NJ
+34039,34,Union,NJ
+35001,35,Bernalillo,NM
+35013,35,Doña Ana,NM
+36001,36,Albany,NY
+36005,36,Bronx,NY
+36029,36,Erie,NY
+36047,36,Kings,NY
+36055,36,Monroe,NY
+36059,36,Nassau,NY
+36061,36,New York,NY
+36063,36,Niagara,NY
+36067,36,Onondaga,NY
+36081,36,Queens,NY
+36085,36,Richmond,NY
+36093,36,Schenectady,NY
+36103,36,Suffolk,NY
+36119,36,Westchester,NY
+37025,37,Cabarrus,NC
+37051,37,Cumberland,NC
+37063,37,Durham,NC
+37067,37,Forsyth,NC
+37071,37,Gaston,NC
+37081,37,Guilford,NC
+37119,37,Mecklenburg,NC
+37129,37,New Hanover,NC
+37133,37,Onslow,NC
+37183,37,Wake,NC
+38017,38,Cass,ND
+38035,38,Grand Forks,ND
+39017,39,Butler,OH
+39035,39,Cuyahoga,OH
+39049,39,Franklin,OH
+39061,39,Hamilton,OH
+39093,39,Lorain,OH
+39095,39,Lucas,OH
+39099,39,Mahoning,OH
+39113,39,Montgomery,OH
+39151,39,Stark,OH
+39153,39,Summit,OH
+40027,40,Cleveland,OK
+40031,40,Comanche,OK
+40109,40,Oklahoma,OK
+40143,40,Tulsa,OK
+41005,41,Clackamas,OR
+41017,41,Deschutes,OR
+41029,41,Jackson,OR
+41039,41,Lane,OR
+41047,41,Marion,OR
+41051,41,Multnomah,OR
+41067,41,Washington,OR
+42003,42,Allegheny,PA
+42011,42,Berks,PA
+42045,42,Delaware,PA
+42049,42,Erie,PA
+42077,42,Lehigh,PA
+42079,42,Luzerne,PA
+42091,42,Montgomery,PA
+42101,42,Philadelphia,PA
+42133,42,York,PA
+44007,44,Providence,RI
+45019,45,Charleston,SC
+45045,45,Greenville,SC
+45051,45,Horry,SC
+45079,45,Richland,SC
+45083,45,Spartanburg,SC
+46099,46,Minnehaha,SD
+46103,46,Pennington,SD
+47037,47,Davidson,TN
+47065,47,Hamilton,TN
+47093,47,Knox,TN
+47125,47,Montgomery,TN
+47149,47,Rutherford,TN
+47157,47,Shelby,TN
+47163,47,Sullivan,TN
+47179,47,Washington,TN
+47187,47,Williamson,TN
+48027,48,Bell,TX
+48029,48,Bexar,TX
+48037,48,Bowie,TX
+48039,48,Brazoria,TX
+48041,48,Brazos,TX
+48061,48,Cameron,TX
+48085,48,Collin,TX
+48091,48,Comal,TX
+48113,48,Dallas,TX
+48121,48,Denton,TX
+48141,48,El Paso,TX
+48157,48,Fort Bend,TX
+48167,48,Galveston,TX
+48201,48,Harris,TX
+48209,48,Hays,TX
+48215,48,Hidalgo,TX
+48245,48,Jefferson,TX
+48303,48,Lubbock,TX
+48309,48,McLennan,TX
+48339,48,Montgomery,TX
+48355,48,Nueces,TX
+48423,48,Smith,TX
+48439,48,Tarrant,TX
+48451,48,Tom Green,TX
+48453,48,Travis,TX
+48469,48,Victoria,TX
+48479,48,Webb,TX
+48491,48,Williamson,TX
+49005,49,Cache,UT
+49011,49,Davis,UT
+49035,49,Salt Lake,UT
+49049,49,Utah,UT
+49057,49,Weber,UT
+51013,51,Arlington,VA
+51041,51,Chesterfield,VA
+51059,51,Fairfax,VA
+51087,51,Henrico,VA
+51107,51,Loudoun,VA
+51153,51,Prince William,VA
+51161,51,Roanoke,VA
+51510,51,Alexandria city,VA
+51550,51,Chesapeake city,VA
+51650,51,Hampton city,VA
+51680,51,Lynchburg city,VA
+51700,51,Newport News city,VA
+51710,51,Norfolk city,VA
+51740,51,Portsmouth city,VA
+51760,51,Richmond city,VA
+51800,51,Suffolk city,VA
+51810,51,Virginia Beach city,VA
+53011,53,Clark,WA
+53033,53,King,WA
+53053,53,Pierce,WA
+53061,53,Snohomish,WA
+53063,53,Spokane,WA
+53067,53,Thurston,WA
+53073,53,Whatcom,WA
+53077,53,Yakima,WA
+54011,54,Cabell,WV
+54039,54,Kanawha,WV
+55009,55,Brown,WI
+55025,55,Dane,WI
+55035,55,Eau Claire,WI
+55059,55,Kenosha,WI
+55063,55,La Crosse,WI
+55073,55,Marathon,WI
+55079,55,Milwaukee,WI
+55087,55,Outagamie,WI
+55101,55,Racine,WI
+55133,55,Waukesha,WI
+56021,56,Laramie,WY
+56025,56,Natrona,WY

@@ -1,0 +1,1940 @@
+[
+  {
+    "fips": "01073",
+    "state_fips": "01",
+    "county_name": "Jefferson",
+    "state_abbr": "AL"
+  },
+  {
+    "fips": "01089",
+    "state_fips": "01",
+    "county_name": "Madison",
+    "state_abbr": "AL"
+  },
+  {
+    "fips": "01097",
+    "state_fips": "01",
+    "county_name": "Mobile",
+    "state_abbr": "AL"
+  },
+  {
+    "fips": "01101",
+    "state_fips": "01",
+    "county_name": "Montgomery",
+    "state_abbr": "AL"
+  },
+  {
+    "fips": "01125",
+    "state_fips": "01",
+    "county_name": "Tuscaloosa",
+    "state_abbr": "AL"
+  },
+  {
+    "fips": "02020",
+    "state_fips": "02",
+    "county_name": "Anchorage Municipality",
+    "state_abbr": "AK"
+  },
+  {
+    "fips": "04003",
+    "state_fips": "04",
+    "county_name": "Cochise",
+    "state_abbr": "AZ"
+  },
+  {
+    "fips": "04013",
+    "state_fips": "04",
+    "county_name": "Maricopa",
+    "state_abbr": "AZ"
+  },
+  {
+    "fips": "04015",
+    "state_fips": "04",
+    "county_name": "Mohave",
+    "state_abbr": "AZ"
+  },
+  {
+    "fips": "04019",
+    "state_fips": "04",
+    "county_name": "Pima",
+    "state_abbr": "AZ"
+  },
+  {
+    "fips": "04025",
+    "state_fips": "04",
+    "county_name": "Yavapai",
+    "state_abbr": "AZ"
+  },
+  {
+    "fips": "04027",
+    "state_fips": "04",
+    "county_name": "Yuma",
+    "state_abbr": "AZ"
+  },
+  {
+    "fips": "05119",
+    "state_fips": "05",
+    "county_name": "Pulaski",
+    "state_abbr": "AR"
+  },
+  {
+    "fips": "06001",
+    "state_fips": "06",
+    "county_name": "Alameda",
+    "state_abbr": "CA"
+  },
+  {
+    "fips": "06007",
+    "state_fips": "06",
+    "county_name": "Butte",
+    "state_abbr": "CA"
+  },
+  {
+    "fips": "06013",
+    "state_fips": "06",
+    "county_name": "Contra Costa",
+    "state_abbr": "CA"
+  },
+  {
+    "fips": "06019",
+    "state_fips": "06",
+    "county_name": "Fresno",
+    "state_abbr": "CA"
+  },
+  {
+    "fips": "06025",
+    "state_fips": "06",
+    "county_name": "Imperial",
+    "state_abbr": "CA"
+  },
+  {
+    "fips": "06029",
+    "state_fips": "06",
+    "county_name": "Kern",
+    "state_abbr": "CA"
+  },
+  {
+    "fips": "06037",
+    "state_fips": "06",
+    "county_name": "Los Angeles",
+    "state_abbr": "CA"
+  },
+  {
+    "fips": "06041",
+    "state_fips": "06",
+    "county_name": "Marin",
+    "state_abbr": "CA"
+  },
+  {
+    "fips": "06047",
+    "state_fips": "06",
+    "county_name": "Merced",
+    "state_abbr": "CA"
+  },
+  {
+    "fips": "06053",
+    "state_fips": "06",
+    "county_name": "Monterey",
+    "state_abbr": "CA"
+  },
+  {
+    "fips": "06059",
+    "state_fips": "06",
+    "county_name": "Orange",
+    "state_abbr": "CA"
+  },
+  {
+    "fips": "06065",
+    "state_fips": "06",
+    "county_name": "Riverside",
+    "state_abbr": "CA"
+  },
+  {
+    "fips": "06067",
+    "state_fips": "06",
+    "county_name": "Sacramento",
+    "state_abbr": "CA"
+  },
+  {
+    "fips": "06071",
+    "state_fips": "06",
+    "county_name": "San Bernardino",
+    "state_abbr": "CA"
+  },
+  {
+    "fips": "06073",
+    "state_fips": "06",
+    "county_name": "San Diego",
+    "state_abbr": "CA"
+  },
+  {
+    "fips": "06075",
+    "state_fips": "06",
+    "county_name": "San Francisco",
+    "state_abbr": "CA"
+  },
+  {
+    "fips": "06077",
+    "state_fips": "06",
+    "county_name": "San Joaquin",
+    "state_abbr": "CA"
+  },
+  {
+    "fips": "06079",
+    "state_fips": "06",
+    "county_name": "San Luis Obispo",
+    "state_abbr": "CA"
+  },
+  {
+    "fips": "06081",
+    "state_fips": "06",
+    "county_name": "San Mateo",
+    "state_abbr": "CA"
+  },
+  {
+    "fips": "06083",
+    "state_fips": "06",
+    "county_name": "Santa Barbara",
+    "state_abbr": "CA"
+  },
+  {
+    "fips": "06085",
+    "state_fips": "06",
+    "county_name": "Santa Clara",
+    "state_abbr": "CA"
+  },
+  {
+    "fips": "06087",
+    "state_fips": "06",
+    "county_name": "Santa Cruz",
+    "state_abbr": "CA"
+  },
+  {
+    "fips": "06089",
+    "state_fips": "06",
+    "county_name": "Shasta",
+    "state_abbr": "CA"
+  },
+  {
+    "fips": "06095",
+    "state_fips": "06",
+    "county_name": "Solano",
+    "state_abbr": "CA"
+  },
+  {
+    "fips": "06097",
+    "state_fips": "06",
+    "county_name": "Sonoma",
+    "state_abbr": "CA"
+  },
+  {
+    "fips": "06099",
+    "state_fips": "06",
+    "county_name": "Stanislaus",
+    "state_abbr": "CA"
+  },
+  {
+    "fips": "06107",
+    "state_fips": "06",
+    "county_name": "Tulare",
+    "state_abbr": "CA"
+  },
+  {
+    "fips": "06111",
+    "state_fips": "06",
+    "county_name": "Ventura",
+    "state_abbr": "CA"
+  },
+  {
+    "fips": "06113",
+    "state_fips": "06",
+    "county_name": "Yolo",
+    "state_abbr": "CA"
+  },
+  {
+    "fips": "08001",
+    "state_fips": "08",
+    "county_name": "Adams",
+    "state_abbr": "CO"
+  },
+  {
+    "fips": "08005",
+    "state_fips": "08",
+    "county_name": "Arapahoe",
+    "state_abbr": "CO"
+  },
+  {
+    "fips": "08013",
+    "state_fips": "08",
+    "county_name": "Boulder",
+    "state_abbr": "CO"
+  },
+  {
+    "fips": "08031",
+    "state_fips": "08",
+    "county_name": "Denver",
+    "state_abbr": "CO"
+  },
+  {
+    "fips": "08041",
+    "state_fips": "08",
+    "county_name": "El Paso",
+    "state_abbr": "CO"
+  },
+  {
+    "fips": "08059",
+    "state_fips": "08",
+    "county_name": "Jefferson",
+    "state_abbr": "CO"
+  },
+  {
+    "fips": "08069",
+    "state_fips": "08",
+    "county_name": "Larimer",
+    "state_abbr": "CO"
+  },
+  {
+    "fips": "08101",
+    "state_fips": "08",
+    "county_name": "Pueblo",
+    "state_abbr": "CO"
+  },
+  {
+    "fips": "08123",
+    "state_fips": "08",
+    "county_name": "Weld",
+    "state_abbr": "CO"
+  },
+  {
+    "fips": "09110",
+    "state_fips": "09",
+    "county_name": "Capitol Planning Region",
+    "state_abbr": "CT"
+  },
+  {
+    "fips": "09170",
+    "state_fips": "09",
+    "county_name": "South Central Connecticut Planning Region",
+    "state_abbr": "CT"
+  },
+  {
+    "fips": "09190",
+    "state_fips": "09",
+    "county_name": "Western Connecticut Planning Region",
+    "state_abbr": "CT"
+  },
+  {
+    "fips": "11001",
+    "state_fips": "11",
+    "county_name": "District of Columbia",
+    "state_abbr": "DC"
+  },
+  {
+    "fips": "12001",
+    "state_fips": "12",
+    "county_name": "Alachua",
+    "state_abbr": "FL"
+  },
+  {
+    "fips": "12009",
+    "state_fips": "12",
+    "county_name": "Brevard",
+    "state_abbr": "FL"
+  },
+  {
+    "fips": "12011",
+    "state_fips": "12",
+    "county_name": "Broward",
+    "state_abbr": "FL"
+  },
+  {
+    "fips": "12021",
+    "state_fips": "12",
+    "county_name": "Collier",
+    "state_abbr": "FL"
+  },
+  {
+    "fips": "12031",
+    "state_fips": "12",
+    "county_name": "Duval",
+    "state_abbr": "FL"
+  },
+  {
+    "fips": "12033",
+    "state_fips": "12",
+    "county_name": "Escambia",
+    "state_abbr": "FL"
+  },
+  {
+    "fips": "12053",
+    "state_fips": "12",
+    "county_name": "Hernando",
+    "state_abbr": "FL"
+  },
+  {
+    "fips": "12057",
+    "state_fips": "12",
+    "county_name": "Hillsborough",
+    "state_abbr": "FL"
+  },
+  {
+    "fips": "12071",
+    "state_fips": "12",
+    "county_name": "Lee",
+    "state_abbr": "FL"
+  },
+  {
+    "fips": "12073",
+    "state_fips": "12",
+    "county_name": "Leon",
+    "state_abbr": "FL"
+  },
+  {
+    "fips": "12083",
+    "state_fips": "12",
+    "county_name": "Marion",
+    "state_abbr": "FL"
+  },
+  {
+    "fips": "12085",
+    "state_fips": "12",
+    "county_name": "Martin",
+    "state_abbr": "FL"
+  },
+  {
+    "fips": "12086",
+    "state_fips": "12",
+    "county_name": "Miami-Dade",
+    "state_abbr": "FL"
+  },
+  {
+    "fips": "12095",
+    "state_fips": "12",
+    "county_name": "Orange",
+    "state_abbr": "FL"
+  },
+  {
+    "fips": "12097",
+    "state_fips": "12",
+    "county_name": "Osceola",
+    "state_abbr": "FL"
+  },
+  {
+    "fips": "12099",
+    "state_fips": "12",
+    "county_name": "Palm Beach",
+    "state_abbr": "FL"
+  },
+  {
+    "fips": "12101",
+    "state_fips": "12",
+    "county_name": "Pasco",
+    "state_abbr": "FL"
+  },
+  {
+    "fips": "12103",
+    "state_fips": "12",
+    "county_name": "Pinellas",
+    "state_abbr": "FL"
+  },
+  {
+    "fips": "12105",
+    "state_fips": "12",
+    "county_name": "Polk",
+    "state_abbr": "FL"
+  },
+  {
+    "fips": "12115",
+    "state_fips": "12",
+    "county_name": "Sarasota",
+    "state_abbr": "FL"
+  },
+  {
+    "fips": "12117",
+    "state_fips": "12",
+    "county_name": "Seminole",
+    "state_abbr": "FL"
+  },
+  {
+    "fips": "12127",
+    "state_fips": "12",
+    "county_name": "Volusia",
+    "state_abbr": "FL"
+  },
+  {
+    "fips": "13021",
+    "state_fips": "13",
+    "county_name": "Bibb",
+    "state_abbr": "GA"
+  },
+  {
+    "fips": "13051",
+    "state_fips": "13",
+    "county_name": "Chatham",
+    "state_abbr": "GA"
+  },
+  {
+    "fips": "13063",
+    "state_fips": "13",
+    "county_name": "Clayton",
+    "state_abbr": "GA"
+  },
+  {
+    "fips": "13067",
+    "state_fips": "13",
+    "county_name": "Cobb",
+    "state_abbr": "GA"
+  },
+  {
+    "fips": "13089",
+    "state_fips": "13",
+    "county_name": "DeKalb",
+    "state_abbr": "GA"
+  },
+  {
+    "fips": "13095",
+    "state_fips": "13",
+    "county_name": "Dougherty",
+    "state_abbr": "GA"
+  },
+  {
+    "fips": "13117",
+    "state_fips": "13",
+    "county_name": "Forsyth",
+    "state_abbr": "GA"
+  },
+  {
+    "fips": "13121",
+    "state_fips": "13",
+    "county_name": "Fulton",
+    "state_abbr": "GA"
+  },
+  {
+    "fips": "13135",
+    "state_fips": "13",
+    "county_name": "Gwinnett",
+    "state_abbr": "GA"
+  },
+  {
+    "fips": "13139",
+    "state_fips": "13",
+    "county_name": "Hall",
+    "state_abbr": "GA"
+  },
+  {
+    "fips": "13215",
+    "state_fips": "13",
+    "county_name": "Muscogee",
+    "state_abbr": "GA"
+  },
+  {
+    "fips": "13245",
+    "state_fips": "13",
+    "county_name": "Richmond",
+    "state_abbr": "GA"
+  },
+  {
+    "fips": "15003",
+    "state_fips": "15",
+    "county_name": "Honolulu",
+    "state_abbr": "HI"
+  },
+  {
+    "fips": "16001",
+    "state_fips": "16",
+    "county_name": "Ada",
+    "state_abbr": "ID"
+  },
+  {
+    "fips": "17031",
+    "state_fips": "17",
+    "county_name": "Cook",
+    "state_abbr": "IL"
+  },
+  {
+    "fips": "17043",
+    "state_fips": "17",
+    "county_name": "DuPage",
+    "state_abbr": "IL"
+  },
+  {
+    "fips": "17089",
+    "state_fips": "17",
+    "county_name": "Kane",
+    "state_abbr": "IL"
+  },
+  {
+    "fips": "17097",
+    "state_fips": "17",
+    "county_name": "Lake",
+    "state_abbr": "IL"
+  },
+  {
+    "fips": "17143",
+    "state_fips": "17",
+    "county_name": "Peoria",
+    "state_abbr": "IL"
+  },
+  {
+    "fips": "17167",
+    "state_fips": "17",
+    "county_name": "Sangamon",
+    "state_abbr": "IL"
+  },
+  {
+    "fips": "17197",
+    "state_fips": "17",
+    "county_name": "Will",
+    "state_abbr": "IL"
+  },
+  {
+    "fips": "17201",
+    "state_fips": "17",
+    "county_name": "Winnebago",
+    "state_abbr": "IL"
+  },
+  {
+    "fips": "18003",
+    "state_fips": "18",
+    "county_name": "Allen",
+    "state_abbr": "IN"
+  },
+  {
+    "fips": "18035",
+    "state_fips": "18",
+    "county_name": "Delaware",
+    "state_abbr": "IN"
+  },
+  {
+    "fips": "18089",
+    "state_fips": "18",
+    "county_name": "Lake",
+    "state_abbr": "IN"
+  },
+  {
+    "fips": "18097",
+    "state_fips": "18",
+    "county_name": "Marion",
+    "state_abbr": "IN"
+  },
+  {
+    "fips": "18141",
+    "state_fips": "18",
+    "county_name": "St. Joseph",
+    "state_abbr": "IN"
+  },
+  {
+    "fips": "18157",
+    "state_fips": "18",
+    "county_name": "Tippecanoe",
+    "state_abbr": "IN"
+  },
+  {
+    "fips": "18163",
+    "state_fips": "18",
+    "county_name": "Vanderburgh",
+    "state_abbr": "IN"
+  },
+  {
+    "fips": "19113",
+    "state_fips": "19",
+    "county_name": "Linn",
+    "state_abbr": "IA"
+  },
+  {
+    "fips": "19153",
+    "state_fips": "19",
+    "county_name": "Polk",
+    "state_abbr": "IA"
+  },
+  {
+    "fips": "19163",
+    "state_fips": "19",
+    "county_name": "Scott",
+    "state_abbr": "IA"
+  },
+  {
+    "fips": "19193",
+    "state_fips": "19",
+    "county_name": "Woodbury",
+    "state_abbr": "IA"
+  },
+  {
+    "fips": "20045",
+    "state_fips": "20",
+    "county_name": "Douglas",
+    "state_abbr": "KS"
+  },
+  {
+    "fips": "20091",
+    "state_fips": "20",
+    "county_name": "Johnson",
+    "state_abbr": "KS"
+  },
+  {
+    "fips": "20173",
+    "state_fips": "20",
+    "county_name": "Sedgwick",
+    "state_abbr": "KS"
+  },
+  {
+    "fips": "20177",
+    "state_fips": "20",
+    "county_name": "Shawnee",
+    "state_abbr": "KS"
+  },
+  {
+    "fips": "20209",
+    "state_fips": "20",
+    "county_name": "Wyandotte",
+    "state_abbr": "KS"
+  },
+  {
+    "fips": "21067",
+    "state_fips": "21",
+    "county_name": "Fayette",
+    "state_abbr": "KY"
+  },
+  {
+    "fips": "21111",
+    "state_fips": "21",
+    "county_name": "Jefferson",
+    "state_abbr": "KY"
+  },
+  {
+    "fips": "22017",
+    "state_fips": "22",
+    "county_name": "Caddo Parish",
+    "state_abbr": "LA"
+  },
+  {
+    "fips": "22033",
+    "state_fips": "22",
+    "county_name": "East Baton Rouge Parish",
+    "state_abbr": "LA"
+  },
+  {
+    "fips": "22051",
+    "state_fips": "22",
+    "county_name": "Jefferson Parish",
+    "state_abbr": "LA"
+  },
+  {
+    "fips": "22055",
+    "state_fips": "22",
+    "county_name": "Lafayette Parish",
+    "state_abbr": "LA"
+  },
+  {
+    "fips": "22071",
+    "state_fips": "22",
+    "county_name": "Orleans Parish",
+    "state_abbr": "LA"
+  },
+  {
+    "fips": "23019",
+    "state_fips": "23",
+    "county_name": "Penobscot",
+    "state_abbr": "ME"
+  },
+  {
+    "fips": "24003",
+    "state_fips": "24",
+    "county_name": "Anne Arundel",
+    "state_abbr": "MD"
+  },
+  {
+    "fips": "24005",
+    "state_fips": "24",
+    "county_name": "Baltimore",
+    "state_abbr": "MD"
+  },
+  {
+    "fips": "24031",
+    "state_fips": "24",
+    "county_name": "Montgomery",
+    "state_abbr": "MD"
+  },
+  {
+    "fips": "24033",
+    "state_fips": "24",
+    "county_name": "Prince George's",
+    "state_abbr": "MD"
+  },
+  {
+    "fips": "24510",
+    "state_fips": "24",
+    "county_name": "Baltimore city",
+    "state_abbr": "MD"
+  },
+  {
+    "fips": "25005",
+    "state_fips": "25",
+    "county_name": "Bristol",
+    "state_abbr": "MA"
+  },
+  {
+    "fips": "25009",
+    "state_fips": "25",
+    "county_name": "Essex",
+    "state_abbr": "MA"
+  },
+  {
+    "fips": "25013",
+    "state_fips": "25",
+    "county_name": "Hampden",
+    "state_abbr": "MA"
+  },
+  {
+    "fips": "25017",
+    "state_fips": "25",
+    "county_name": "Middlesex",
+    "state_abbr": "MA"
+  },
+  {
+    "fips": "25021",
+    "state_fips": "25",
+    "county_name": "Norfolk",
+    "state_abbr": "MA"
+  },
+  {
+    "fips": "25023",
+    "state_fips": "25",
+    "county_name": "Plymouth",
+    "state_abbr": "MA"
+  },
+  {
+    "fips": "25025",
+    "state_fips": "25",
+    "county_name": "Suffolk",
+    "state_abbr": "MA"
+  },
+  {
+    "fips": "25027",
+    "state_fips": "25",
+    "county_name": "Worcester",
+    "state_abbr": "MA"
+  },
+  {
+    "fips": "26017",
+    "state_fips": "26",
+    "county_name": "Bay",
+    "state_abbr": "MI"
+  },
+  {
+    "fips": "26049",
+    "state_fips": "26",
+    "county_name": "Genesee",
+    "state_abbr": "MI"
+  },
+  {
+    "fips": "26065",
+    "state_fips": "26",
+    "county_name": "Ingham",
+    "state_abbr": "MI"
+  },
+  {
+    "fips": "26077",
+    "state_fips": "26",
+    "county_name": "Kalamazoo",
+    "state_abbr": "MI"
+  },
+  {
+    "fips": "26081",
+    "state_fips": "26",
+    "county_name": "Kent",
+    "state_abbr": "MI"
+  },
+  {
+    "fips": "26099",
+    "state_fips": "26",
+    "county_name": "Macomb",
+    "state_abbr": "MI"
+  },
+  {
+    "fips": "26125",
+    "state_fips": "26",
+    "county_name": "Oakland",
+    "state_abbr": "MI"
+  },
+  {
+    "fips": "26145",
+    "state_fips": "26",
+    "county_name": "Saginaw",
+    "state_abbr": "MI"
+  },
+  {
+    "fips": "26161",
+    "state_fips": "26",
+    "county_name": "Washtenaw",
+    "state_abbr": "MI"
+  },
+  {
+    "fips": "26163",
+    "state_fips": "26",
+    "county_name": "Wayne",
+    "state_abbr": "MI"
+  },
+  {
+    "fips": "27003",
+    "state_fips": "27",
+    "county_name": "Anoka",
+    "state_abbr": "MN"
+  },
+  {
+    "fips": "27037",
+    "state_fips": "27",
+    "county_name": "Dakota",
+    "state_abbr": "MN"
+  },
+  {
+    "fips": "27053",
+    "state_fips": "27",
+    "county_name": "Hennepin",
+    "state_abbr": "MN"
+  },
+  {
+    "fips": "27109",
+    "state_fips": "27",
+    "county_name": "Olmsted",
+    "state_abbr": "MN"
+  },
+  {
+    "fips": "27123",
+    "state_fips": "27",
+    "county_name": "Ramsey",
+    "state_abbr": "MN"
+  },
+  {
+    "fips": "27137",
+    "state_fips": "27",
+    "county_name": "St. Louis",
+    "state_abbr": "MN"
+  },
+  {
+    "fips": "28049",
+    "state_fips": "28",
+    "county_name": "Hinds",
+    "state_abbr": "MS"
+  },
+  {
+    "fips": "29019",
+    "state_fips": "29",
+    "county_name": "Boone",
+    "state_abbr": "MO"
+  },
+  {
+    "fips": "29077",
+    "state_fips": "29",
+    "county_name": "Greene",
+    "state_abbr": "MO"
+  },
+  {
+    "fips": "29095",
+    "state_fips": "29",
+    "county_name": "Jackson",
+    "state_abbr": "MO"
+  },
+  {
+    "fips": "29189",
+    "state_fips": "29",
+    "county_name": "St. Louis",
+    "state_abbr": "MO"
+  },
+  {
+    "fips": "29510",
+    "state_fips": "29",
+    "county_name": "St. Louis city",
+    "state_abbr": "MO"
+  },
+  {
+    "fips": "30063",
+    "state_fips": "30",
+    "county_name": "Missoula",
+    "state_abbr": "MT"
+  },
+  {
+    "fips": "30111",
+    "state_fips": "30",
+    "county_name": "Yellowstone",
+    "state_abbr": "MT"
+  },
+  {
+    "fips": "31055",
+    "state_fips": "31",
+    "county_name": "Douglas",
+    "state_abbr": "NE"
+  },
+  {
+    "fips": "31109",
+    "state_fips": "31",
+    "county_name": "Lancaster",
+    "state_abbr": "NE"
+  },
+  {
+    "fips": "31153",
+    "state_fips": "31",
+    "county_name": "Sarpy",
+    "state_abbr": "NE"
+  },
+  {
+    "fips": "32003",
+    "state_fips": "32",
+    "county_name": "Clark",
+    "state_abbr": "NV"
+  },
+  {
+    "fips": "32031",
+    "state_fips": "32",
+    "county_name": "Washoe",
+    "state_abbr": "NV"
+  },
+  {
+    "fips": "33011",
+    "state_fips": "33",
+    "county_name": "Hillsborough",
+    "state_abbr": "NH"
+  },
+  {
+    "fips": "33013",
+    "state_fips": "33",
+    "county_name": "Merrimack",
+    "state_abbr": "NH"
+  },
+  {
+    "fips": "34003",
+    "state_fips": "34",
+    "county_name": "Bergen",
+    "state_abbr": "NJ"
+  },
+  {
+    "fips": "34007",
+    "state_fips": "34",
+    "county_name": "Camden",
+    "state_abbr": "NJ"
+  },
+  {
+    "fips": "34013",
+    "state_fips": "34",
+    "county_name": "Essex",
+    "state_abbr": "NJ"
+  },
+  {
+    "fips": "34017",
+    "state_fips": "34",
+    "county_name": "Hudson",
+    "state_abbr": "NJ"
+  },
+  {
+    "fips": "34023",
+    "state_fips": "34",
+    "county_name": "Middlesex",
+    "state_abbr": "NJ"
+  },
+  {
+    "fips": "34025",
+    "state_fips": "34",
+    "county_name": "Monmouth",
+    "state_abbr": "NJ"
+  },
+  {
+    "fips": "34029",
+    "state_fips": "34",
+    "county_name": "Ocean",
+    "state_abbr": "NJ"
+  },
+  {
+    "fips": "34031",
+    "state_fips": "34",
+    "county_name": "Passaic",
+    "state_abbr": "NJ"
+  },
+  {
+    "fips": "34039",
+    "state_fips": "34",
+    "county_name": "Union",
+    "state_abbr": "NJ"
+  },
+  {
+    "fips": "35001",
+    "state_fips": "35",
+    "county_name": "Bernalillo",
+    "state_abbr": "NM"
+  },
+  {
+    "fips": "35013",
+    "state_fips": "35",
+    "county_name": "Do\u00f1a Ana",
+    "state_abbr": "NM"
+  },
+  {
+    "fips": "36001",
+    "state_fips": "36",
+    "county_name": "Albany",
+    "state_abbr": "NY"
+  },
+  {
+    "fips": "36005",
+    "state_fips": "36",
+    "county_name": "Bronx",
+    "state_abbr": "NY"
+  },
+  {
+    "fips": "36029",
+    "state_fips": "36",
+    "county_name": "Erie",
+    "state_abbr": "NY"
+  },
+  {
+    "fips": "36047",
+    "state_fips": "36",
+    "county_name": "Kings",
+    "state_abbr": "NY"
+  },
+  {
+    "fips": "36055",
+    "state_fips": "36",
+    "county_name": "Monroe",
+    "state_abbr": "NY"
+  },
+  {
+    "fips": "36059",
+    "state_fips": "36",
+    "county_name": "Nassau",
+    "state_abbr": "NY"
+  },
+  {
+    "fips": "36061",
+    "state_fips": "36",
+    "county_name": "New York",
+    "state_abbr": "NY"
+  },
+  {
+    "fips": "36063",
+    "state_fips": "36",
+    "county_name": "Niagara",
+    "state_abbr": "NY"
+  },
+  {
+    "fips": "36067",
+    "state_fips": "36",
+    "county_name": "Onondaga",
+    "state_abbr": "NY"
+  },
+  {
+    "fips": "36081",
+    "state_fips": "36",
+    "county_name": "Queens",
+    "state_abbr": "NY"
+  },
+  {
+    "fips": "36085",
+    "state_fips": "36",
+    "county_name": "Richmond",
+    "state_abbr": "NY"
+  },
+  {
+    "fips": "36093",
+    "state_fips": "36",
+    "county_name": "Schenectady",
+    "state_abbr": "NY"
+  },
+  {
+    "fips": "36103",
+    "state_fips": "36",
+    "county_name": "Suffolk",
+    "state_abbr": "NY"
+  },
+  {
+    "fips": "36119",
+    "state_fips": "36",
+    "county_name": "Westchester",
+    "state_abbr": "NY"
+  },
+  {
+    "fips": "37025",
+    "state_fips": "37",
+    "county_name": "Cabarrus",
+    "state_abbr": "NC"
+  },
+  {
+    "fips": "37051",
+    "state_fips": "37",
+    "county_name": "Cumberland",
+    "state_abbr": "NC"
+  },
+  {
+    "fips": "37063",
+    "state_fips": "37",
+    "county_name": "Durham",
+    "state_abbr": "NC"
+  },
+  {
+    "fips": "37067",
+    "state_fips": "37",
+    "county_name": "Forsyth",
+    "state_abbr": "NC"
+  },
+  {
+    "fips": "37071",
+    "state_fips": "37",
+    "county_name": "Gaston",
+    "state_abbr": "NC"
+  },
+  {
+    "fips": "37081",
+    "state_fips": "37",
+    "county_name": "Guilford",
+    "state_abbr": "NC"
+  },
+  {
+    "fips": "37119",
+    "state_fips": "37",
+    "county_name": "Mecklenburg",
+    "state_abbr": "NC"
+  },
+  {
+    "fips": "37129",
+    "state_fips": "37",
+    "county_name": "New Hanover",
+    "state_abbr": "NC"
+  },
+  {
+    "fips": "37133",
+    "state_fips": "37",
+    "county_name": "Onslow",
+    "state_abbr": "NC"
+  },
+  {
+    "fips": "37183",
+    "state_fips": "37",
+    "county_name": "Wake",
+    "state_abbr": "NC"
+  },
+  {
+    "fips": "38017",
+    "state_fips": "38",
+    "county_name": "Cass",
+    "state_abbr": "ND"
+  },
+  {
+    "fips": "38035",
+    "state_fips": "38",
+    "county_name": "Grand Forks",
+    "state_abbr": "ND"
+  },
+  {
+    "fips": "39017",
+    "state_fips": "39",
+    "county_name": "Butler",
+    "state_abbr": "OH"
+  },
+  {
+    "fips": "39035",
+    "state_fips": "39",
+    "county_name": "Cuyahoga",
+    "state_abbr": "OH"
+  },
+  {
+    "fips": "39049",
+    "state_fips": "39",
+    "county_name": "Franklin",
+    "state_abbr": "OH"
+  },
+  {
+    "fips": "39061",
+    "state_fips": "39",
+    "county_name": "Hamilton",
+    "state_abbr": "OH"
+  },
+  {
+    "fips": "39093",
+    "state_fips": "39",
+    "county_name": "Lorain",
+    "state_abbr": "OH"
+  },
+  {
+    "fips": "39095",
+    "state_fips": "39",
+    "county_name": "Lucas",
+    "state_abbr": "OH"
+  },
+  {
+    "fips": "39099",
+    "state_fips": "39",
+    "county_name": "Mahoning",
+    "state_abbr": "OH"
+  },
+  {
+    "fips": "39113",
+    "state_fips": "39",
+    "county_name": "Montgomery",
+    "state_abbr": "OH"
+  },
+  {
+    "fips": "39151",
+    "state_fips": "39",
+    "county_name": "Stark",
+    "state_abbr": "OH"
+  },
+  {
+    "fips": "39153",
+    "state_fips": "39",
+    "county_name": "Summit",
+    "state_abbr": "OH"
+  },
+  {
+    "fips": "40027",
+    "state_fips": "40",
+    "county_name": "Cleveland",
+    "state_abbr": "OK"
+  },
+  {
+    "fips": "40031",
+    "state_fips": "40",
+    "county_name": "Comanche",
+    "state_abbr": "OK"
+  },
+  {
+    "fips": "40109",
+    "state_fips": "40",
+    "county_name": "Oklahoma",
+    "state_abbr": "OK"
+  },
+  {
+    "fips": "40143",
+    "state_fips": "40",
+    "county_name": "Tulsa",
+    "state_abbr": "OK"
+  },
+  {
+    "fips": "41005",
+    "state_fips": "41",
+    "county_name": "Clackamas",
+    "state_abbr": "OR"
+  },
+  {
+    "fips": "41017",
+    "state_fips": "41",
+    "county_name": "Deschutes",
+    "state_abbr": "OR"
+  },
+  {
+    "fips": "41029",
+    "state_fips": "41",
+    "county_name": "Jackson",
+    "state_abbr": "OR"
+  },
+  {
+    "fips": "41039",
+    "state_fips": "41",
+    "county_name": "Lane",
+    "state_abbr": "OR"
+  },
+  {
+    "fips": "41047",
+    "state_fips": "41",
+    "county_name": "Marion",
+    "state_abbr": "OR"
+  },
+  {
+    "fips": "41051",
+    "state_fips": "41",
+    "county_name": "Multnomah",
+    "state_abbr": "OR"
+  },
+  {
+    "fips": "41067",
+    "state_fips": "41",
+    "county_name": "Washington",
+    "state_abbr": "OR"
+  },
+  {
+    "fips": "42003",
+    "state_fips": "42",
+    "county_name": "Allegheny",
+    "state_abbr": "PA"
+  },
+  {
+    "fips": "42011",
+    "state_fips": "42",
+    "county_name": "Berks",
+    "state_abbr": "PA"
+  },
+  {
+    "fips": "42045",
+    "state_fips": "42",
+    "county_name": "Delaware",
+    "state_abbr": "PA"
+  },
+  {
+    "fips": "42049",
+    "state_fips": "42",
+    "county_name": "Erie",
+    "state_abbr": "PA"
+  },
+  {
+    "fips": "42077",
+    "state_fips": "42",
+    "county_name": "Lehigh",
+    "state_abbr": "PA"
+  },
+  {
+    "fips": "42079",
+    "state_fips": "42",
+    "county_name": "Luzerne",
+    "state_abbr": "PA"
+  },
+  {
+    "fips": "42091",
+    "state_fips": "42",
+    "county_name": "Montgomery",
+    "state_abbr": "PA"
+  },
+  {
+    "fips": "42101",
+    "state_fips": "42",
+    "county_name": "Philadelphia",
+    "state_abbr": "PA"
+  },
+  {
+    "fips": "42133",
+    "state_fips": "42",
+    "county_name": "York",
+    "state_abbr": "PA"
+  },
+  {
+    "fips": "44007",
+    "state_fips": "44",
+    "county_name": "Providence",
+    "state_abbr": "RI"
+  },
+  {
+    "fips": "45019",
+    "state_fips": "45",
+    "county_name": "Charleston",
+    "state_abbr": "SC"
+  },
+  {
+    "fips": "45045",
+    "state_fips": "45",
+    "county_name": "Greenville",
+    "state_abbr": "SC"
+  },
+  {
+    "fips": "45051",
+    "state_fips": "45",
+    "county_name": "Horry",
+    "state_abbr": "SC"
+  },
+  {
+    "fips": "45079",
+    "state_fips": "45",
+    "county_name": "Richland",
+    "state_abbr": "SC"
+  },
+  {
+    "fips": "45083",
+    "state_fips": "45",
+    "county_name": "Spartanburg",
+    "state_abbr": "SC"
+  },
+  {
+    "fips": "46099",
+    "state_fips": "46",
+    "county_name": "Minnehaha",
+    "state_abbr": "SD"
+  },
+  {
+    "fips": "46103",
+    "state_fips": "46",
+    "county_name": "Pennington",
+    "state_abbr": "SD"
+  },
+  {
+    "fips": "47037",
+    "state_fips": "47",
+    "county_name": "Davidson",
+    "state_abbr": "TN"
+  },
+  {
+    "fips": "47065",
+    "state_fips": "47",
+    "county_name": "Hamilton",
+    "state_abbr": "TN"
+  },
+  {
+    "fips": "47093",
+    "state_fips": "47",
+    "county_name": "Knox",
+    "state_abbr": "TN"
+  },
+  {
+    "fips": "47125",
+    "state_fips": "47",
+    "county_name": "Montgomery",
+    "state_abbr": "TN"
+  },
+  {
+    "fips": "47149",
+    "state_fips": "47",
+    "county_name": "Rutherford",
+    "state_abbr": "TN"
+  },
+  {
+    "fips": "47157",
+    "state_fips": "47",
+    "county_name": "Shelby",
+    "state_abbr": "TN"
+  },
+  {
+    "fips": "47163",
+    "state_fips": "47",
+    "county_name": "Sullivan",
+    "state_abbr": "TN"
+  },
+  {
+    "fips": "47179",
+    "state_fips": "47",
+    "county_name": "Washington",
+    "state_abbr": "TN"
+  },
+  {
+    "fips": "47187",
+    "state_fips": "47",
+    "county_name": "Williamson",
+    "state_abbr": "TN"
+  },
+  {
+    "fips": "48027",
+    "state_fips": "48",
+    "county_name": "Bell",
+    "state_abbr": "TX"
+  },
+  {
+    "fips": "48029",
+    "state_fips": "48",
+    "county_name": "Bexar",
+    "state_abbr": "TX"
+  },
+  {
+    "fips": "48037",
+    "state_fips": "48",
+    "county_name": "Bowie",
+    "state_abbr": "TX"
+  },
+  {
+    "fips": "48039",
+    "state_fips": "48",
+    "county_name": "Brazoria",
+    "state_abbr": "TX"
+  },
+  {
+    "fips": "48041",
+    "state_fips": "48",
+    "county_name": "Brazos",
+    "state_abbr": "TX"
+  },
+  {
+    "fips": "48061",
+    "state_fips": "48",
+    "county_name": "Cameron",
+    "state_abbr": "TX"
+  },
+  {
+    "fips": "48085",
+    "state_fips": "48",
+    "county_name": "Collin",
+    "state_abbr": "TX"
+  },
+  {
+    "fips": "48091",
+    "state_fips": "48",
+    "county_name": "Comal",
+    "state_abbr": "TX"
+  },
+  {
+    "fips": "48113",
+    "state_fips": "48",
+    "county_name": "Dallas",
+    "state_abbr": "TX"
+  },
+  {
+    "fips": "48121",
+    "state_fips": "48",
+    "county_name": "Denton",
+    "state_abbr": "TX"
+  },
+  {
+    "fips": "48141",
+    "state_fips": "48",
+    "county_name": "El Paso",
+    "state_abbr": "TX"
+  },
+  {
+    "fips": "48157",
+    "state_fips": "48",
+    "county_name": "Fort Bend",
+    "state_abbr": "TX"
+  },
+  {
+    "fips": "48167",
+    "state_fips": "48",
+    "county_name": "Galveston",
+    "state_abbr": "TX"
+  },
+  {
+    "fips": "48201",
+    "state_fips": "48",
+    "county_name": "Harris",
+    "state_abbr": "TX"
+  },
+  {
+    "fips": "48209",
+    "state_fips": "48",
+    "county_name": "Hays",
+    "state_abbr": "TX"
+  },
+  {
+    "fips": "48215",
+    "state_fips": "48",
+    "county_name": "Hidalgo",
+    "state_abbr": "TX"
+  },
+  {
+    "fips": "48245",
+    "state_fips": "48",
+    "county_name": "Jefferson",
+    "state_abbr": "TX"
+  },
+  {
+    "fips": "48303",
+    "state_fips": "48",
+    "county_name": "Lubbock",
+    "state_abbr": "TX"
+  },
+  {
+    "fips": "48309",
+    "state_fips": "48",
+    "county_name": "McLennan",
+    "state_abbr": "TX"
+  },
+  {
+    "fips": "48339",
+    "state_fips": "48",
+    "county_name": "Montgomery",
+    "state_abbr": "TX"
+  },
+  {
+    "fips": "48355",
+    "state_fips": "48",
+    "county_name": "Nueces",
+    "state_abbr": "TX"
+  },
+  {
+    "fips": "48423",
+    "state_fips": "48",
+    "county_name": "Smith",
+    "state_abbr": "TX"
+  },
+  {
+    "fips": "48439",
+    "state_fips": "48",
+    "county_name": "Tarrant",
+    "state_abbr": "TX"
+  },
+  {
+    "fips": "48451",
+    "state_fips": "48",
+    "county_name": "Tom Green",
+    "state_abbr": "TX"
+  },
+  {
+    "fips": "48453",
+    "state_fips": "48",
+    "county_name": "Travis",
+    "state_abbr": "TX"
+  },
+  {
+    "fips": "48469",
+    "state_fips": "48",
+    "county_name": "Victoria",
+    "state_abbr": "TX"
+  },
+  {
+    "fips": "48479",
+    "state_fips": "48",
+    "county_name": "Webb",
+    "state_abbr": "TX"
+  },
+  {
+    "fips": "48491",
+    "state_fips": "48",
+    "county_name": "Williamson",
+    "state_abbr": "TX"
+  },
+  {
+    "fips": "49005",
+    "state_fips": "49",
+    "county_name": "Cache",
+    "state_abbr": "UT"
+  },
+  {
+    "fips": "49011",
+    "state_fips": "49",
+    "county_name": "Davis",
+    "state_abbr": "UT"
+  },
+  {
+    "fips": "49035",
+    "state_fips": "49",
+    "county_name": "Salt Lake",
+    "state_abbr": "UT"
+  },
+  {
+    "fips": "49049",
+    "state_fips": "49",
+    "county_name": "Utah",
+    "state_abbr": "UT"
+  },
+  {
+    "fips": "49057",
+    "state_fips": "49",
+    "county_name": "Weber",
+    "state_abbr": "UT"
+  },
+  {
+    "fips": "51013",
+    "state_fips": "51",
+    "county_name": "Arlington",
+    "state_abbr": "VA"
+  },
+  {
+    "fips": "51041",
+    "state_fips": "51",
+    "county_name": "Chesterfield",
+    "state_abbr": "VA"
+  },
+  {
+    "fips": "51059",
+    "state_fips": "51",
+    "county_name": "Fairfax",
+    "state_abbr": "VA"
+  },
+  {
+    "fips": "51087",
+    "state_fips": "51",
+    "county_name": "Henrico",
+    "state_abbr": "VA"
+  },
+  {
+    "fips": "51107",
+    "state_fips": "51",
+    "county_name": "Loudoun",
+    "state_abbr": "VA"
+  },
+  {
+    "fips": "51153",
+    "state_fips": "51",
+    "county_name": "Prince William",
+    "state_abbr": "VA"
+  },
+  {
+    "fips": "51161",
+    "state_fips": "51",
+    "county_name": "Roanoke",
+    "state_abbr": "VA"
+  },
+  {
+    "fips": "51510",
+    "state_fips": "51",
+    "county_name": "Alexandria city",
+    "state_abbr": "VA"
+  },
+  {
+    "fips": "51550",
+    "state_fips": "51",
+    "county_name": "Chesapeake city",
+    "state_abbr": "VA"
+  },
+  {
+    "fips": "51650",
+    "state_fips": "51",
+    "county_name": "Hampton city",
+    "state_abbr": "VA"
+  },
+  {
+    "fips": "51680",
+    "state_fips": "51",
+    "county_name": "Lynchburg city",
+    "state_abbr": "VA"
+  },
+  {
+    "fips": "51700",
+    "state_fips": "51",
+    "county_name": "Newport News city",
+    "state_abbr": "VA"
+  },
+  {
+    "fips": "51710",
+    "state_fips": "51",
+    "county_name": "Norfolk city",
+    "state_abbr": "VA"
+  },
+  {
+    "fips": "51740",
+    "state_fips": "51",
+    "county_name": "Portsmouth city",
+    "state_abbr": "VA"
+  },
+  {
+    "fips": "51760",
+    "state_fips": "51",
+    "county_name": "Richmond city",
+    "state_abbr": "VA"
+  },
+  {
+    "fips": "51800",
+    "state_fips": "51",
+    "county_name": "Suffolk city",
+    "state_abbr": "VA"
+  },
+  {
+    "fips": "51810",
+    "state_fips": "51",
+    "county_name": "Virginia Beach city",
+    "state_abbr": "VA"
+  },
+  {
+    "fips": "53011",
+    "state_fips": "53",
+    "county_name": "Clark",
+    "state_abbr": "WA"
+  },
+  {
+    "fips": "53033",
+    "state_fips": "53",
+    "county_name": "King",
+    "state_abbr": "WA"
+  },
+  {
+    "fips": "53053",
+    "state_fips": "53",
+    "county_name": "Pierce",
+    "state_abbr": "WA"
+  },
+  {
+    "fips": "53061",
+    "state_fips": "53",
+    "county_name": "Snohomish",
+    "state_abbr": "WA"
+  },
+  {
+    "fips": "53063",
+    "state_fips": "53",
+    "county_name": "Spokane",
+    "state_abbr": "WA"
+  },
+  {
+    "fips": "53067",
+    "state_fips": "53",
+    "county_name": "Thurston",
+    "state_abbr": "WA"
+  },
+  {
+    "fips": "53073",
+    "state_fips": "53",
+    "county_name": "Whatcom",
+    "state_abbr": "WA"
+  },
+  {
+    "fips": "53077",
+    "state_fips": "53",
+    "county_name": "Yakima",
+    "state_abbr": "WA"
+  },
+  {
+    "fips": "54011",
+    "state_fips": "54",
+    "county_name": "Cabell",
+    "state_abbr": "WV"
+  },
+  {
+    "fips": "54039",
+    "state_fips": "54",
+    "county_name": "Kanawha",
+    "state_abbr": "WV"
+  },
+  {
+    "fips": "55009",
+    "state_fips": "55",
+    "county_name": "Brown",
+    "state_abbr": "WI"
+  },
+  {
+    "fips": "55025",
+    "state_fips": "55",
+    "county_name": "Dane",
+    "state_abbr": "WI"
+  },
+  {
+    "fips": "55035",
+    "state_fips": "55",
+    "county_name": "Eau Claire",
+    "state_abbr": "WI"
+  },
+  {
+    "fips": "55059",
+    "state_fips": "55",
+    "county_name": "Kenosha",
+    "state_abbr": "WI"
+  },
+  {
+    "fips": "55063",
+    "state_fips": "55",
+    "county_name": "La Crosse",
+    "state_abbr": "WI"
+  },
+  {
+    "fips": "55073",
+    "state_fips": "55",
+    "county_name": "Marathon",
+    "state_abbr": "WI"
+  },
+  {
+    "fips": "55079",
+    "state_fips": "55",
+    "county_name": "Milwaukee",
+    "state_abbr": "WI"
+  },
+  {
+    "fips": "55087",
+    "state_fips": "55",
+    "county_name": "Outagamie",
+    "state_abbr": "WI"
+  },
+  {
+    "fips": "55101",
+    "state_fips": "55",
+    "county_name": "Racine",
+    "state_abbr": "WI"
+  },
+  {
+    "fips": "55133",
+    "state_fips": "55",
+    "county_name": "Waukesha",
+    "state_abbr": "WI"
+  },
+  {
+    "fips": "56021",
+    "state_fips": "56",
+    "county_name": "Laramie",
+    "state_abbr": "WY"
+  },
+  {
+    "fips": "56025",
+    "state_fips": "56",
+    "county_name": "Natrona",
+    "state_abbr": "WY"
+  }
+]

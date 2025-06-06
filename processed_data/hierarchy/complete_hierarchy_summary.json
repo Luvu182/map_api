@@ -1,0 +1,2532 @@
+{
+  "processing_time": 4.35989785194397,
+  "total_counties": 323,
+  "total_roads": 5263747,
+  "errors": [],
+  "states": {
+    "Alabama": {
+      "total_counties": 5,
+      "total_roads": 116649,
+      "road_types": {
+        "Local Streets": 102465,
+        "Special Roads": 12995,
+        "Secondary Roads": 1077,
+        "Primary Roads": 112
+      },
+      "counties": {
+        "01073": {
+          "Local Streets": 25308,
+          "Special Roads": 1814,
+          "Secondary Roads": 321,
+          "Primary Roads": 38
+        },
+        "01089": {
+          "Secondary Roads": 187,
+          "Local Streets": 25765,
+          "Primary Roads": 30,
+          "Special Roads": 2929
+        },
+        "01097": {
+          "Local Streets": 33995,
+          "Secondary Roads": 247,
+          "Special Roads": 6984,
+          "Primary Roads": 14
+        },
+        "01101": {
+          "Local Streets": 6504,
+          "Special Roads": 621,
+          "Secondary Roads": 153,
+          "Primary Roads": 12
+        },
+        "01125": {
+          "Local Streets": 10893,
+          "Special Roads": 647,
+          "Secondary Roads": 169,
+          "Primary Roads": 18
+        }
+      }
+    },
+    "Alaska": {
+      "total_counties": 1,
+      "total_roads": 7350,
+      "road_types": {
+        "Local Streets": 6553,
+        "Special Roads": 746,
+        "Primary Roads": 20,
+        "Secondary Roads": 31
+      },
+      "counties": {
+        "02020": {
+          "Local Streets": 6553,
+          "Special Roads": 746,
+          "Primary Roads": 20,
+          "Secondary Roads": 31
+        }
+      }
+    },
+    "Arizona": {
+      "total_counties": 6,
+      "total_roads": 251934,
+      "road_types": {
+        "Secondary Roads": 456,
+        "Local Streets": 230185,
+        "Special Roads": 21185,
+        "Primary Roads": 108
+      },
+      "counties": {
+        "04003": {
+          "Secondary Roads": 92,
+          "Local Streets": 14374,
+          "Special Roads": 1168,
+          "Primary Roads": 4
+        },
+        "04013": {
+          "Local Streets": 115375,
+          "Secondary Roads": 105,
+          "Special Roads": 9355,
+          "Primary Roads": 73
+        },
+        "04015": {
+          "Local Streets": 26821,
+          "Special Roads": 3586,
+          "Secondary Roads": 55,
+          "Primary Roads": 8
+        },
+        "04019": {
+          "Local Streets": 36722,
+          "Special Roads": 946,
+          "Secondary Roads": 53,
+          "Primary Roads": 7
+        },
+        "04025": {
+          "Local Streets": 25115,
+          "Special Roads": 4506,
+          "Secondary Roads": 109,
+          "Primary Roads": 10
+        },
+        "04027": {
+          "Local Streets": 11778,
+          "Special Roads": 1624,
+          "Secondary Roads": 42,
+          "Primary Roads": 6
+        }
+      }
+    },
+    "Arkansas": {
+      "total_counties": 1,
+      "total_roads": 14329,
+      "road_types": {
+        "Local Streets": 12304,
+        "Secondary Roads": 228,
+        "Special Roads": 1763,
+        "Primary Roads": 34
+      },
+      "counties": {
+        "05119": {
+          "Local Streets": 12304,
+          "Secondary Roads": 228,
+          "Special Roads": 1763,
+          "Primary Roads": 34
+        }
+      }
+    },
+    "California": {
+      "total_counties": 29,
+      "total_roads": 839769,
+      "road_types": {
+        "Local Streets": 747707,
+        "Special Roads": 86251,
+        "Primary Roads": 1115,
+        "Secondary Roads": 4696
+      },
+      "counties": {
+        "06001": {
+          "Local Streets": 23697,
+          "Special Roads": 2543,
+          "Primary Roads": 69,
+          "Secondary Roads": 171
+        },
+        "06007": {
+          "Local Streets": 9151,
+          "Secondary Roads": 59,
+          "Special Roads": 276,
+          "Primary Roads": 9
+        },
+        "06013": {
+          "Local Streets": 28789,
+          "Special Roads": 1479,
+          "Primary Roads": 28,
+          "Secondary Roads": 19
+        },
+        "06019": {
+          "Local Streets": 29410,
+          "Special Roads": 1880,
+          "Secondary Roads": 151,
+          "Primary Roads": 25
+        },
+        "06025": {
+          "Secondary Roads": 154,
+          "Local Streets": 7667,
+          "Special Roads": 427,
+          "Primary Roads": 5
+        },
+        "06029": {
+          "Local Streets": 49353,
+          "Special Roads": 8337,
+          "Secondary Roads": 262,
+          "Primary Roads": 34
+        },
+        "06037": {
+          "Local Streets": 120168,
+          "Secondary Roads": 692,
+          "Special Roads": 14118,
+          "Primary Roads": 248
+        },
+        "06041": {
+          "Local Streets": 7218,
+          "Special Roads": 807,
+          "Secondary Roads": 38,
+          "Primary Roads": 9
+        },
+        "06047": {
+          "Local Streets": 8316,
+          "Special Roads": 658,
+          "Secondary Roads": 69,
+          "Primary Roads": 13
+        },
+        "06053": {
+          "Local Streets": 15809,
+          "Special Roads": 2277,
+          "Secondary Roads": 85,
+          "Primary Roads": 29
+        },
+        "06059": {
+          "Local Streets": 53981,
+          "Special Roads": 5047,
+          "Secondary Roads": 156,
+          "Primary Roads": 91
+        },
+        "06065": {
+          "Local Streets": 55486,
+          "Special Roads": 2758,
+          "Secondary Roads": 170,
+          "Primary Roads": 31
+        },
+        "06067": {
+          "Local Streets": 26186,
+          "Primary Roads": 34,
+          "Secondary Roads": 42,
+          "Special Roads": 2173
+        },
+        "06071": {
+          "Local Streets": 68624,
+          "Secondary Roads": 202,
+          "Special Roads": 4805,
+          "Primary Roads": 49
+        },
+        "06073": {
+          "Local Streets": 49860,
+          "Primary Roads": 99,
+          "Special Roads": 12329,
+          "Secondary Roads": 334
+        },
+        "06075": {
+          "Local Streets": 3743,
+          "Secondary Roads": 34,
+          "Special Roads": 318,
+          "Primary Roads": 32
+        },
+        "06077": {
+          "Local Streets": 13330,
+          "Secondary Roads": 91,
+          "Special Roads": 1907,
+          "Primary Roads": 24
+        },
+        "06079": {
+          "Local Streets": 15828,
+          "Special Roads": 1597,
+          "Secondary Roads": 174,
+          "Primary Roads": 23
+        },
+        "06081": {
+          "Local Streets": 9907,
+          "Special Roads": 936,
+          "Secondary Roads": 148,
+          "Primary Roads": 27
+        },
+        "06083": {
+          "Local Streets": 13455,
+          "Special Roads": 2863,
+          "Secondary Roads": 172,
+          "Primary Roads": 22
+        },
+        "06085": {
+          "Local Streets": 33005,
+          "Special Roads": 5029,
+          "Secondary Roads": 277,
+          "Primary Roads": 48
+        },
+        "06087": {
+          "Local Streets": 8924,
+          "Special Roads": 3865,
+          "Secondary Roads": 242,
+          "Primary Roads": 5
+        },
+        "06089": {
+          "Primary Roads": 15,
+          "Secondary Roads": 107,
+          "Special Roads": 1227,
+          "Local Streets": 14332
+        },
+        "06095": {
+          "Local Streets": 13296,
+          "Secondary Roads": 63,
+          "Special Roads": 2251,
+          "Primary Roads": 36
+        },
+        "06097": {
+          "Local Streets": 19246,
+          "Special Roads": 1292,
+          "Secondary Roads": 101,
+          "Primary Roads": 10
+        },
+        "06099": {
+          "Local Streets": 9502,
+          "Secondary Roads": 44,
+          "Special Roads": 288,
+          "Primary Roads": 7
+        },
+        "06107": {
+          "Local Streets": 15089,
+          "Special Roads": 1599,
+          "Primary Roads": 28,
+          "Secondary Roads": 404
+        },
+        "06111": {
+          "Local Streets": 20019,
+          "Secondary Roads": 183,
+          "Special Roads": 2673,
+          "Primary Roads": 43
+        },
+        "06113": {
+          "Primary Roads": 22,
+          "Local Streets": 4316,
+          "Secondary Roads": 52,
+          "Special Roads": 492
+        }
+      }
+    },
+    "Colorado": {
+      "total_counties": 9,
+      "total_roads": 127498,
+      "road_types": {
+        "Secondary Roads": 1209,
+        "Local Streets": 112379,
+        "Special Roads": 13674,
+        "Primary Roads": 236
+      },
+      "counties": {
+        "08001": {
+          "Secondary Roads": 106,
+          "Local Streets": 10414,
+          "Special Roads": 1166,
+          "Primary Roads": 58
+        },
+        "08005": {
+          "Secondary Roads": 152,
+          "Local Streets": 12819,
+          "Special Roads": 1439,
+          "Primary Roads": 53
+        },
+        "08013": {
+          "Secondary Roads": 180,
+          "Local Streets": 8467,
+          "Special Roads": 385,
+          "Primary Roads": 12
+        },
+        "08031": {
+          "Secondary Roads": 197,
+          "Local Streets": 6362,
+          "Special Roads": 2129,
+          "Primary Roads": 46
+        },
+        "08041": {
+          "Local Streets": 26716,
+          "Special Roads": 2879,
+          "Secondary Roads": 80,
+          "Primary Roads": 14
+        },
+        "08059": {
+          "Secondary Roads": 145,
+          "Local Streets": 14491,
+          "Special Roads": 580,
+          "Primary Roads": 27
+        },
+        "08069": {
+          "Secondary Roads": 115,
+          "Local Streets": 15194,
+          "Special Roads": 2387,
+          "Primary Roads": 4
+        },
+        "08101": {
+          "Local Streets": 8075,
+          "Special Roads": 1311,
+          "Secondary Roads": 75,
+          "Primary Roads": 10
+        },
+        "08123": {
+          "Secondary Roads": 159,
+          "Local Streets": 9841,
+          "Special Roads": 1398,
+          "Primary Roads": 12
+        }
+      }
+    },
+    "Connecticut": {
+      "total_counties": 3,
+      "total_roads": 51430,
+      "road_types": {
+        "Local Streets": 46114,
+        "Secondary Roads": 1308,
+        "Primary Roads": 158,
+        "Special Roads": 3850
+      },
+      "counties": {
+        "09110": {
+          "Local Streets": 19818,
+          "Secondary Roads": 630,
+          "Primary Roads": 76,
+          "Special Roads": 1871
+        },
+        "09170": {
+          "Local Streets": 10899,
+          "Secondary Roads": 266,
+          "Primary Roads": 34,
+          "Special Roads": 1043
+        },
+        "09190": {
+          "Local Streets": 15397,
+          "Secondary Roads": 412,
+          "Special Roads": 936,
+          "Primary Roads": 48
+        }
+      }
+    },
+    "District of Columbia": {
+      "total_counties": 1,
+      "total_roads": 4390,
+      "road_types": {
+        "Secondary Roads": 102,
+        "Local Streets": 3717,
+        "Special Roads": 492,
+        "Primary Roads": 79
+      },
+      "counties": {
+        "11001": {
+          "Secondary Roads": 102,
+          "Local Streets": 3717,
+          "Special Roads": 492,
+          "Primary Roads": 79
+        }
+      }
+    },
+    "Florida": {
+      "total_counties": 22,
+      "total_roads": 417898,
+      "road_types": {
+        "Local Streets": 383379,
+        "Secondary Roads": 4977,
+        "Special Roads": 29073,
+        "Primary Roads": 469
+      },
+      "counties": {
+        "12001": {
+          "Local Streets": 15347,
+          "Secondary Roads": 169,
+          "Special Roads": 1244,
+          "Primary Roads": 2
+        },
+        "12009": {
+          "Secondary Roads": 222,
+          "Local Streets": 15248,
+          "Special Roads": 487,
+          "Primary Roads": 13
+        },
+        "12011": {
+          "Local Streets": 30064,
+          "Special Roads": 1560,
+          "Secondary Roads": 407,
+          "Primary Roads": 28
+        },
+        "12021": {
+          "Local Streets": 9309,
+          "Secondary Roads": 66,
+          "Special Roads": 304,
+          "Primary Roads": 8
+        },
+        "12031": {
+          "Local Streets": 20097,
+          "Secondary Roads": 322,
+          "Primary Roads": 70,
+          "Special Roads": 1547
+        },
+        "12033": {
+          "Secondary Roads": 386,
+          "Special Roads": 9826,
+          "Local Streets": 10128,
+          "Primary Roads": 8
+        },
+        "12053": {
+          "Local Streets": 6782,
+          "Secondary Roads": 74,
+          "Special Roads": 198,
+          "Primary Roads": 8
+        },
+        "12057": {
+          "Local Streets": 24975,
+          "Secondary Roads": 173,
+          "Primary Roads": 55,
+          "Special Roads": 796
+        },
+        "12071": {
+          "Local Streets": 24284,
+          "Secondary Roads": 161,
+          "Special Roads": 352,
+          "Primary Roads": 15
+        },
+        "12073": {
+          "Local Streets": 9293,
+          "Secondary Roads": 174,
+          "Special Roads": 1852,
+          "Primary Roads": 4
+        },
+        "12083": {
+          "Secondary Roads": 93,
+          "Local Streets": 18580,
+          "Special Roads": 1571,
+          "Primary Roads": 5
+        },
+        "12085": {
+          "Local Streets": 5061,
+          "Special Roads": 236,
+          "Secondary Roads": 45,
+          "Primary Roads": 8
+        },
+        "12086": {
+          "Local Streets": 33643,
+          "Primary Roads": 59,
+          "Secondary Roads": 372,
+          "Special Roads": 2865
+        },
+        "12095": {
+          "Local Streets": 25914,
+          "Primary Roads": 67,
+          "Secondary Roads": 490,
+          "Special Roads": 1519
+        },
+        "12097": {
+          "Local Streets": 9776,
+          "Secondary Roads": 95,
+          "Special Roads": 386,
+          "Primary Roads": 12
+        },
+        "12099": {
+          "Local Streets": 26626,
+          "Secondary Roads": 307,
+          "Special Roads": 893,
+          "Primary Roads": 8
+        },
+        "12101": {
+          "Local Streets": 13495,
+          "Secondary Roads": 126,
+          "Special Roads": 348,
+          "Primary Roads": 36
+        },
+        "12103": {
+          "Local Streets": 21390,
+          "Secondary Roads": 186,
+          "Special Roads": 746,
+          "Primary Roads": 19
+        },
+        "12105": {
+          "Local Streets": 22410,
+          "Secondary Roads": 425,
+          "Special Roads": 548,
+          "Primary Roads": 14
+        },
+        "12115": {
+          "Local Streets": 14439,
+          "Secondary Roads": 263,
+          "Special Roads": 1188,
+          "Primary Roads": 2
+        },
+        "12117": {
+          "Local Streets": 11897,
+          "Secondary Roads": 186,
+          "Special Roads": 228,
+          "Primary Roads": 12
+        },
+        "12127": {
+          "Local Streets": 14621,
+          "Special Roads": 379,
+          "Secondary Roads": 235,
+          "Primary Roads": 16
+        }
+      }
+    },
+    "Georgia": {
+      "total_counties": 12,
+      "total_roads": 120226,
+      "road_types": {
+        "Local Streets": 111572,
+        "Secondary Roads": 1812,
+        "Special Roads": 6549,
+        "Primary Roads": 293
+      },
+      "counties": {
+        "13021": {
+          "Local Streets": 4350,
+          "Secondary Roads": 143,
+          "Special Roads": 511,
+          "Primary Roads": 12
+        },
+        "13051": {
+          "Local Streets": 6202,
+          "Secondary Roads": 128,
+          "Special Roads": 487,
+          "Primary Roads": 29
+        },
+        "13063": {
+          "Secondary Roads": 102,
+          "Local Streets": 4983,
+          "Special Roads": 349,
+          "Primary Roads": 22
+        },
+        "13067": {
+          "Local Streets": 21766,
+          "Secondary Roads": 230,
+          "Special Roads": 453,
+          "Primary Roads": 21
+        },
+        "13089": {
+          "Local Streets": 12164,
+          "Special Roads": 499,
+          "Secondary Roads": 123,
+          "Primary Roads": 33
+        },
+        "13095": {
+          "Secondary Roads": 129,
+          "Special Roads": 363,
+          "Local Streets": 2519,
+          "Primary Roads": 12
+        },
+        "13117": {
+          "Local Streets": 5339,
+          "Secondary Roads": 52,
+          "Special Roads": 72,
+          "Primary Roads": 7
+        },
+        "13121": {
+          "Local Streets": 18823,
+          "Secondary Roads": 270,
+          "Special Roads": 2377,
+          "Primary Roads": 64
+        },
+        "13135": {
+          "Local Streets": 17189,
+          "Secondary Roads": 193,
+          "Primary Roads": 36,
+          "Special Roads": 371
+        },
+        "13139": {
+          "Secondary Roads": 227,
+          "Local Streets": 5504,
+          "Primary Roads": 15,
+          "Special Roads": 124
+        },
+        "13215": {
+          "Secondary Roads": 83,
+          "Primary Roads": 26,
+          "Local Streets": 4826,
+          "Special Roads": 201
+        },
+        "13245": {
+          "Local Streets": 7907,
+          "Secondary Roads": 132,
+          "Special Roads": 742,
+          "Primary Roads": 16
+        }
+      }
+    },
+    "Hawaii": {
+      "total_counties": 1,
+      "total_roads": 13016,
+      "road_types": {
+        "Local Streets": 11762,
+        "Secondary Roads": 321,
+        "Primary Roads": 39,
+        "Special Roads": 894
+      },
+      "counties": {
+        "15003": {
+          "Local Streets": 11762,
+          "Secondary Roads": 321,
+          "Primary Roads": 39,
+          "Special Roads": 894
+        }
+      }
+    },
+    "Idaho": {
+      "total_counties": 1,
+      "total_roads": 17905,
+      "road_types": {
+        "Special Roads": 369,
+        "Local Streets": 17453,
+        "Secondary Roads": 67,
+        "Primary Roads": 16
+      },
+      "counties": {
+        "16001": {
+          "Special Roads": 369,
+          "Local Streets": 17453,
+          "Secondary Roads": 67,
+          "Primary Roads": 16
+        }
+      }
+    },
+    "Illinois": {
+      "total_counties": 8,
+      "total_roads": 154774,
+      "road_types": {
+        "Local Streets": 118380,
+        "Primary Roads": 292,
+        "Secondary Roads": 2026,
+        "Special Roads": 34076
+      },
+      "counties": {
+        "17031": {
+          "Local Streets": 44352,
+          "Primary Roads": 191,
+          "Secondary Roads": 599,
+          "Special Roads": 30864
+        },
+        "17043": {
+          "Local Streets": 15711,
+          "Secondary Roads": 228,
+          "Special Roads": 597,
+          "Primary Roads": 20
+        },
+        "17089": {
+          "Local Streets": 9105,
+          "Secondary Roads": 150,
+          "Special Roads": 228,
+          "Primary Roads": 11
+        },
+        "17097": {
+          "Local Streets": 15982,
+          "Secondary Roads": 358,
+          "Primary Roads": 20,
+          "Special Roads": 598
+        },
+        "17143": {
+          "Local Streets": 4978,
+          "Secondary Roads": 165,
+          "Special Roads": 211,
+          "Primary Roads": 8
+        },
+        "17167": {
+          "Local Streets": 6489,
+          "Secondary Roads": 176,
+          "Special Roads": 742,
+          "Primary Roads": 14
+        },
+        "17197": {
+          "Local Streets": 14092,
+          "Special Roads": 393,
+          "Primary Roads": 15,
+          "Secondary Roads": 215
+        },
+        "17201": {
+          "Local Streets": 7671,
+          "Secondary Roads": 135,
+          "Special Roads": 443,
+          "Primary Roads": 13
+        }
+      }
+    },
+    "Indiana": {
+      "total_counties": 7,
+      "total_roads": 69048,
+      "road_types": {
+        "Local Streets": 59818,
+        "Special Roads": 8156,
+        "Secondary Roads": 926,
+        "Primary Roads": 148
+      },
+      "counties": {
+        "18003": {
+          "Local Streets": 8812,
+          "Special Roads": 925,
+          "Secondary Roads": 185,
+          "Primary Roads": 35
+        },
+        "18035": {
+          "Local Streets": 4188,
+          "Secondary Roads": 54,
+          "Special Roads": 176,
+          "Primary Roads": 12
+        },
+        "18089": {
+          "Local Streets": 10205,
+          "Secondary Roads": 263,
+          "Special Roads": 2884,
+          "Primary Roads": 26
+        },
+        "18097": {
+          "Local Streets": 19727,
+          "Primary Roads": 40,
+          "Special Roads": 998,
+          "Secondary Roads": 129
+        },
+        "18141": {
+          "Local Streets": 8286,
+          "Special Roads": 2452,
+          "Secondary Roads": 117,
+          "Primary Roads": 18
+        },
+        "18157": {
+          "Local Streets": 4300,
+          "Special Roads": 452,
+          "Secondary Roads": 128,
+          "Primary Roads": 2
+        },
+        "18163": {
+          "Local Streets": 4300,
+          "Special Roads": 269,
+          "Secondary Roads": 50,
+          "Primary Roads": 15
+        }
+      }
+    },
+    "Iowa": {
+      "total_counties": 4,
+      "total_roads": 38310,
+      "road_types": {
+        "Local Streets": 30876,
+        "Secondary Roads": 527,
+        "Special Roads": 6852,
+        "Primary Roads": 55
+      },
+      "counties": {
+        "19113": {
+          "Local Streets": 5842,
+          "Secondary Roads": 98,
+          "Special Roads": 589,
+          "Primary Roads": 15
+        },
+        "19153": {
+          "Local Streets": 11067,
+          "Special Roads": 1273,
+          "Secondary Roads": 245,
+          "Primary Roads": 16
+        },
+        "19163": {
+          "Secondary Roads": 80,
+          "Local Streets": 8887,
+          "Primary Roads": 14,
+          "Special Roads": 2203
+        },
+        "19193": {
+          "Secondary Roads": 104,
+          "Local Streets": 5080,
+          "Special Roads": 2787,
+          "Primary Roads": 10
+        }
+      }
+    },
+    "Kansas": {
+      "total_counties": 5,
+      "total_roads": 49279,
+      "road_types": {
+        "Local Streets": 43854,
+        "Secondary Roads": 414,
+        "Special Roads": 4875,
+        "Primary Roads": 136
+      },
+      "counties": {
+        "20045": {
+          "Local Streets": 3525,
+          "Secondary Roads": 65,
+          "Special Roads": 348,
+          "Primary Roads": 8
+        },
+        "20091": {
+          "Local Streets": 16311,
+          "Secondary Roads": 68,
+          "Special Roads": 584,
+          "Primary Roads": 24
+        },
+        "20173": {
+          "Local Streets": 13555,
+          "Secondary Roads": 95,
+          "Special Roads": 799,
+          "Primary Roads": 42
+        },
+        "20177": {
+          "Local Streets": 4905,
+          "Secondary Roads": 74,
+          "Special Roads": 712,
+          "Primary Roads": 16
+        },
+        "20209": {
+          "Local Streets": 5558,
+          "Secondary Roads": 112,
+          "Special Roads": 2432,
+          "Primary Roads": 46
+        }
+      }
+    },
+    "Kentucky": {
+      "total_counties": 2,
+      "total_roads": 19218,
+      "road_types": {
+        "Local Streets": 17164,
+        "Primary Roads": 46,
+        "Secondary Roads": 362,
+        "Special Roads": 1646
+      },
+      "counties": {
+        "21067": {
+          "Local Streets": 4804,
+          "Primary Roads": 26,
+          "Secondary Roads": 152,
+          "Special Roads": 300
+        },
+        "21111": {
+          "Local Streets": 12360,
+          "Secondary Roads": 210,
+          "Special Roads": 1346,
+          "Primary Roads": 20
+        }
+      }
+    },
+    "Louisiana": {
+      "total_counties": 5,
+      "total_roads": 44578,
+      "road_types": {
+        "Local Streets": 40045,
+        "Secondary Roads": 1273,
+        "Special Roads": 3187,
+        "Primary Roads": 73
+      },
+      "counties": {
+        "22017": {
+          "Local Streets": 9504,
+          "Secondary Roads": 336,
+          "Special Roads": 1631,
+          "Primary Roads": 14
+        },
+        "22033": {
+          "Local Streets": 8485,
+          "Secondary Roads": 292,
+          "Special Roads": 438,
+          "Primary Roads": 12
+        },
+        "22051": {
+          "Local Streets": 8621,
+          "Primary Roads": 18,
+          "Secondary Roads": 267,
+          "Special Roads": 430
+        },
+        "22055": {
+          "Local Streets": 6385,
+          "Special Roads": 223,
+          "Secondary Roads": 209,
+          "Primary Roads": 6
+        },
+        "22071": {
+          "Local Streets": 7050,
+          "Primary Roads": 23,
+          "Special Roads": 465,
+          "Secondary Roads": 169
+        }
+      }
+    },
+    "Maine": {
+      "total_counties": 1,
+      "total_roads": 12529,
+      "road_types": {
+        "Local Streets": 9731,
+        "Secondary Roads": 489,
+        "Special Roads": 2302,
+        "Primary Roads": 7
+      },
+      "counties": {
+        "23019": {
+          "Local Streets": 9731,
+          "Secondary Roads": 489,
+          "Special Roads": 2302,
+          "Primary Roads": 7
+        }
+      }
+    },
+    "Maryland": {
+      "total_counties": 5,
+      "total_roads": 98793,
+      "road_types": {
+        "Local Streets": 91074,
+        "Secondary Roads": 1844,
+        "Special Roads": 5613,
+        "Primary Roads": 262
+      },
+      "counties": {
+        "24003": {
+          "Local Streets": 14472,
+          "Secondary Roads": 514,
+          "Special Roads": 1115,
+          "Primary Roads": 72
+        },
+        "24005": {
+          "Secondary Roads": 312,
+          "Local Streets": 27391,
+          "Special Roads": 1066,
+          "Primary Roads": 54
+        },
+        "24031": {
+          "Local Streets": 13554,
+          "Secondary Roads": 352,
+          "Special Roads": 846,
+          "Primary Roads": 54
+        },
+        "24033": {
+          "Special Roads": 2000,
+          "Local Streets": 25696,
+          "Secondary Roads": 403,
+          "Primary Roads": 48
+        },
+        "24510": {
+          "Local Streets": 9961,
+          "Special Roads": 586,
+          "Secondary Roads": 263,
+          "Primary Roads": 34
+        }
+      }
+    },
+    "Massachusetts": {
+      "total_counties": 8,
+      "total_roads": 178052,
+      "road_types": {
+        "Local Streets": 165414,
+        "Secondary Roads": 4421,
+        "Special Roads": 7880,
+        "Primary Roads": 337
+      },
+      "counties": {
+        "25005": {
+          "Local Streets": 15298,
+          "Secondary Roads": 385,
+          "Special Roads": 818,
+          "Primary Roads": 43
+        },
+        "25009": {
+          "Local Streets": 22041,
+          "Secondary Roads": 601,
+          "Special Roads": 1084,
+          "Primary Roads": 23
+        },
+        "25013": {
+          "Local Streets": 13799,
+          "Secondary Roads": 446,
+          "Special Roads": 610,
+          "Primary Roads": 29
+        },
+        "25017": {
+          "Local Streets": 37305,
+          "Secondary Roads": 852,
+          "Primary Roads": 60,
+          "Special Roads": 1833
+        },
+        "25021": {
+          "Local Streets": 18410,
+          "Secondary Roads": 442,
+          "Primary Roads": 44,
+          "Special Roads": 722
+        },
+        "25023": {
+          "Local Streets": 20787,
+          "Secondary Roads": 574,
+          "Special Roads": 592,
+          "Primary Roads": 30
+        },
+        "25025": {
+          "Local Streets": 8906,
+          "Secondary Roads": 252,
+          "Special Roads": 787,
+          "Primary Roads": 48
+        },
+        "25027": {
+          "Local Streets": 28868,
+          "Secondary Roads": 869,
+          "Primary Roads": 60,
+          "Special Roads": 1434
+        }
+      }
+    },
+    "Michigan": {
+      "total_counties": 10,
+      "total_roads": 125357,
+      "road_types": {
+        "Local Streets": 118035,
+        "Secondary Roads": 1139,
+        "Primary Roads": 187,
+        "Special Roads": 5996
+      },
+      "counties": {
+        "26017": {
+          "Local Streets": 3088,
+          "Secondary Roads": 95,
+          "Primary Roads": 7,
+          "Special Roads": 142
+        },
+        "26049": {
+          "Local Streets": 9263,
+          "Secondary Roads": 56,
+          "Special Roads": 719,
+          "Primary Roads": 10
+        },
+        "26065": {
+          "Local Streets": 5530,
+          "Secondary Roads": 136,
+          "Primary Roads": 8,
+          "Special Roads": 311
+        },
+        "26077": {
+          "Local Streets": 6225,
+          "Secondary Roads": 78,
+          "Primary Roads": 8,
+          "Special Roads": 353
+        },
+        "26081": {
+          "Secondary Roads": 119,
+          "Local Streets": 14147,
+          "Special Roads": 713,
+          "Primary Roads": 30
+        },
+        "26099": {
+          "Local Streets": 16187,
+          "Secondary Roads": 175,
+          "Special Roads": 621,
+          "Primary Roads": 15
+        },
+        "26125": {
+          "Secondary Roads": 142,
+          "Local Streets": 26076,
+          "Special Roads": 810,
+          "Primary Roads": 24
+        },
+        "26145": {
+          "Local Streets": 4945,
+          "Special Roads": 195,
+          "Secondary Roads": 129,
+          "Primary Roads": 8
+        },
+        "26161": {
+          "Secondary Roads": 75,
+          "Primary Roads": 19,
+          "Local Streets": 7889,
+          "Special Roads": 305
+        },
+        "26163": {
+          "Secondary Roads": 134,
+          "Local Streets": 24685,
+          "Special Roads": 1827,
+          "Primary Roads": 58
+        }
+      }
+    },
+    "Minnesota": {
+      "total_counties": 6,
+      "total_roads": 84569,
+      "road_types": {
+        "Local Streets": 70508,
+        "Special Roads": 13260,
+        "Secondary Roads": 620,
+        "Primary Roads": 181
+      },
+      "counties": {
+        "27003": {
+          "Local Streets": 11077,
+          "Special Roads": 4291,
+          "Secondary Roads": 53,
+          "Primary Roads": 24
+        },
+        "27037": {
+          "Special Roads": 796,
+          "Local Streets": 9353,
+          "Secondary Roads": 130,
+          "Primary Roads": 34
+        },
+        "27053": {
+          "Local Streets": 19800,
+          "Special Roads": 1731,
+          "Primary Roads": 68,
+          "Secondary Roads": 99
+        },
+        "27109": {
+          "Local Streets": 7217,
+          "Secondary Roads": 78,
+          "Special Roads": 2810,
+          "Primary Roads": 4
+        },
+        "27123": {
+          "Local Streets": 7865,
+          "Secondary Roads": 133,
+          "Special Roads": 536,
+          "Primary Roads": 44
+        },
+        "27137": {
+          "Local Streets": 15196,
+          "Special Roads": 3096,
+          "Secondary Roads": 127,
+          "Primary Roads": 7
+        }
+      }
+    },
+    "Mississippi": {
+      "total_counties": 1,
+      "total_roads": 12012,
+      "road_types": {
+        "Local Streets": 9522,
+        "Secondary Roads": 87,
+        "Special Roads": 2382,
+        "Primary Roads": 21
+      },
+      "counties": {
+        "28049": {
+          "Local Streets": 9522,
+          "Secondary Roads": 87,
+          "Special Roads": 2382,
+          "Primary Roads": 21
+        }
+      }
+    },
+    "Missouri": {
+      "total_counties": 5,
+      "total_roads": 83977,
+      "road_types": {
+        "Local Streets": 72393,
+        "Secondary Roads": 653,
+        "Primary Roads": 155,
+        "Special Roads": 10776
+      },
+      "counties": {
+        "29019": {
+          "Local Streets": 9036,
+          "Secondary Roads": 70,
+          "Primary Roads": 7,
+          "Special Roads": 3182
+        },
+        "29077": {
+          "Local Streets": 13006,
+          "Secondary Roads": 164,
+          "Primary Roads": 18,
+          "Special Roads": 3427
+        },
+        "29095": {
+          "Local Streets": 20229,
+          "Secondary Roads": 169,
+          "Special Roads": 1077,
+          "Primary Roads": 52
+        },
+        "29189": {
+          "Local Streets": 23484,
+          "Secondary Roads": 213,
+          "Special Roads": 2511,
+          "Primary Roads": 35
+        },
+        "29510": {
+          "Local Streets": 6638,
+          "Secondary Roads": 37,
+          "Special Roads": 579,
+          "Primary Roads": 43
+        }
+      }
+    },
+    "Montana": {
+      "total_counties": 2,
+      "total_roads": 15328,
+      "road_types": {
+        "Secondary Roads": 154,
+        "Local Streets": 12828,
+        "Special Roads": 2329,
+        "Primary Roads": 17
+      },
+      "counties": {
+        "30063": {
+          "Secondary Roads": 113,
+          "Local Streets": 7226,
+          "Special Roads": 1167,
+          "Primary Roads": 9
+        },
+        "30111": {
+          "Local Streets": 5602,
+          "Special Roads": 1162,
+          "Secondary Roads": 41,
+          "Primary Roads": 8
+        }
+      }
+    },
+    "Nebraska": {
+      "total_counties": 3,
+      "total_roads": 28690,
+      "road_types": {
+        "Local Streets": 25969,
+        "Special Roads": 2337,
+        "Secondary Roads": 346,
+        "Primary Roads": 38
+      },
+      "counties": {
+        "31055": {
+          "Local Streets": 12204,
+          "Special Roads": 501,
+          "Secondary Roads": 157,
+          "Primary Roads": 24
+        },
+        "31109": {
+          "Local Streets": 7137,
+          "Secondary Roads": 131,
+          "Special Roads": 556,
+          "Primary Roads": 12
+        },
+        "31153": {
+          "Local Streets": 6628,
+          "Secondary Roads": 58,
+          "Special Roads": 1280,
+          "Primary Roads": 2
+        }
+      }
+    },
+    "Nevada": {
+      "total_counties": 2,
+      "total_roads": 79765,
+      "road_types": {
+        "Local Streets": 75238,
+        "Special Roads": 4147,
+        "Secondary Roads": 329,
+        "Primary Roads": 51
+      },
+      "counties": {
+        "32003": {
+          "Local Streets": 61049,
+          "Special Roads": 2382,
+          "Secondary Roads": 257,
+          "Primary Roads": 39
+        },
+        "32031": {
+          "Local Streets": 14189,
+          "Special Roads": 1765,
+          "Secondary Roads": 72,
+          "Primary Roads": 12
+        }
+      }
+    },
+    "New Hampshire": {
+      "total_counties": 2,
+      "total_roads": 23098,
+      "road_types": {
+        "Local Streets": 18346,
+        "Special Roads": 3808,
+        "Secondary Roads": 902,
+        "Primary Roads": 42
+      },
+      "counties": {
+        "33011": {
+          "Local Streets": 12451,
+          "Special Roads": 1969,
+          "Secondary Roads": 527,
+          "Primary Roads": 14
+        },
+        "33013": {
+          "Local Streets": 5895,
+          "Special Roads": 1839,
+          "Secondary Roads": 375,
+          "Primary Roads": 28
+        }
+      }
+    },
+    "New Jersey": {
+      "total_counties": 9,
+      "total_roads": 102315,
+      "road_types": {
+        "Local Streets": 93071,
+        "Special Roads": 7668,
+        "Secondary Roads": 1184,
+        "Primary Roads": 392
+      },
+      "counties": {
+        "34003": {
+          "Local Streets": 13126,
+          "Special Roads": 1319,
+          "Secondary Roads": 118,
+          "Primary Roads": 87
+        },
+        "34007": {
+          "Local Streets": 9338,
+          "Special Roads": 739,
+          "Secondary Roads": 159,
+          "Primary Roads": 40
+        },
+        "34013": {
+          "Local Streets": 7114,
+          "Primary Roads": 87,
+          "Secondary Roads": 83,
+          "Special Roads": 765
+        },
+        "34017": {
+          "Primary Roads": 59,
+          "Local Streets": 2599,
+          "Secondary Roads": 70,
+          "Special Roads": 439
+        },
+        "34023": {
+          "Local Streets": 14303,
+          "Secondary Roads": 149,
+          "Special Roads": 1234,
+          "Primary Roads": 33
+        },
+        "34025": {
+          "Local Streets": 17968,
+          "Secondary Roads": 233,
+          "Special Roads": 952,
+          "Primary Roads": 20
+        },
+        "34029": {
+          "Local Streets": 16334,
+          "Special Roads": 1163,
+          "Secondary Roads": 154,
+          "Primary Roads": 6
+        },
+        "34031": {
+          "Local Streets": 5810,
+          "Secondary Roads": 78,
+          "Primary Roads": 15,
+          "Special Roads": 611
+        },
+        "34039": {
+          "Local Streets": 6479,
+          "Secondary Roads": 140,
+          "Special Roads": 446,
+          "Primary Roads": 45
+        }
+      }
+    },
+    "New Mexico": {
+      "total_counties": 2,
+      "total_roads": 36020,
+      "road_types": {
+        "Local Streets": 32430,
+        "Special Roads": 3234,
+        "Secondary Roads": 330,
+        "Primary Roads": 26
+      },
+      "counties": {
+        "35001": {
+          "Local Streets": 17257,
+          "Special Roads": 1248,
+          "Secondary Roads": 129,
+          "Primary Roads": 12
+        },
+        "35013": {
+          "Local Streets": 15173,
+          "Secondary Roads": 201,
+          "Primary Roads": 14,
+          "Special Roads": 1986
+        }
+      }
+    },
+    "New York": {
+      "total_counties": 14,
+      "total_roads": 155581,
+      "road_types": {
+        "Local Streets": 138589,
+        "Secondary Roads": 3124,
+        "Primary Roads": 522,
+        "Special Roads": 13346
+      },
+      "counties": {
+        "36001": {
+          "Local Streets": 7281,
+          "Secondary Roads": 276,
+          "Primary Roads": 31,
+          "Special Roads": 1373
+        },
+        "36005": {
+          "Special Roads": 629,
+          "Local Streets": 2627,
+          "Primary Roads": 58,
+          "Secondary Roads": 31
+        },
+        "36029": {
+          "Local Streets": 12484,
+          "Secondary Roads": 432,
+          "Primary Roads": 42,
+          "Special Roads": 739
+        },
+        "36047": {
+          "Local Streets": 3005,
+          "Special Roads": 433,
+          "Secondary Roads": 18,
+          "Primary Roads": 40
+        },
+        "36055": {
+          "Local Streets": 11416,
+          "Special Roads": 1079,
+          "Secondary Roads": 343,
+          "Primary Roads": 24
+        },
+        "36059": {
+          "Local Streets": 20184,
+          "Primary Roads": 21,
+          "Secondary Roads": 206,
+          "Special Roads": 796
+        },
+        "36061": {
+          "Local Streets": 1351,
+          "Special Roads": 745,
+          "Primary Roads": 85,
+          "Secondary Roads": 45
+        },
+        "36063": {
+          "Local Streets": 3613,
+          "Secondary Roads": 194,
+          "Special Roads": 537,
+          "Primary Roads": 2
+        },
+        "36067": {
+          "Local Streets": 9464,
+          "Special Roads": 1261,
+          "Secondary Roads": 288,
+          "Primary Roads": 20
+        },
+        "36081": {
+          "Local Streets": 6864,
+          "Secondary Roads": 75,
+          "Special Roads": 1292,
+          "Primary Roads": 94
+        },
+        "36085": {
+          "Local Streets": 4464,
+          "Special Roads": 196,
+          "Primary Roads": 30,
+          "Secondary Roads": 9
+        },
+        "36093": {
+          "Local Streets": 2763,
+          "Special Roads": 190,
+          "Secondary Roads": 91,
+          "Primary Roads": 18
+        },
+        "36103": {
+          "Local Streets": 35734,
+          "Special Roads": 2591,
+          "Secondary Roads": 626,
+          "Primary Roads": 20
+        },
+        "36119": {
+          "Local Streets": 17339,
+          "Special Roads": 1485,
+          "Secondary Roads": 490,
+          "Primary Roads": 37
+        }
+      }
+    },
+    "North Carolina": {
+      "total_counties": 10,
+      "total_roads": 127042,
+      "road_types": {
+        "Local Streets": 116385,
+        "Secondary Roads": 1385,
+        "Special Roads": 9012,
+        "Primary Roads": 260
+      },
+      "counties": {
+        "37025": {
+          "Local Streets": 6113,
+          "Secondary Roads": 111,
+          "Special Roads": 387,
+          "Primary Roads": 4
+        },
+        "37051": {
+          "Local Streets": 8994,
+          "Secondary Roads": 122,
+          "Primary Roads": 24,
+          "Special Roads": 473
+        },
+        "37063": {
+          "Secondary Roads": 88,
+          "Local Streets": 6696,
+          "Special Roads": 463,
+          "Primary Roads": 38
+        },
+        "37067": {
+          "Local Streets": 11951,
+          "Primary Roads": 35,
+          "Special Roads": 801,
+          "Secondary Roads": 77
+        },
+        "37071": {
+          "Local Streets": 9737,
+          "Secondary Roads": 181,
+          "Special Roads": 791,
+          "Primary Roads": 13
+        },
+        "37081": {
+          "Local Streets": 12946,
+          "Special Roads": 925,
+          "Secondary Roads": 115,
+          "Primary Roads": 52
+        },
+        "37119": {
+          "Local Streets": 20637,
+          "Special Roads": 887,
+          "Secondary Roads": 155,
+          "Primary Roads": 38
+        },
+        "37129": {
+          "Local Streets": 5492,
+          "Secondary Roads": 166,
+          "Primary Roads": 13,
+          "Special Roads": 2786
+        },
+        "37133": {
+          "Local Streets": 8390,
+          "Secondary Roads": 78,
+          "Special Roads": 638,
+          "Primary Roads": 4
+        },
+        "37183": {
+          "Local Streets": 25429,
+          "Special Roads": 861,
+          "Secondary Roads": 292,
+          "Primary Roads": 39
+        }
+      }
+    },
+    "North Dakota": {
+      "total_counties": 2,
+      "total_roads": 14256,
+      "road_types": {
+        "Secondary Roads": 143,
+        "Local Streets": 9449,
+        "Special Roads": 4650,
+        "Primary Roads": 14
+      },
+      "counties": {
+        "38017": {
+          "Secondary Roads": 101,
+          "Local Streets": 6562,
+          "Special Roads": 2432,
+          "Primary Roads": 8
+        },
+        "38035": {
+          "Local Streets": 2887,
+          "Secondary Roads": 42,
+          "Special Roads": 2218,
+          "Primary Roads": 6
+        }
+      }
+    },
+    "Ohio": {
+      "total_counties": 10,
+      "total_roads": 119056,
+      "road_types": {
+        "Secondary Roads": 2151,
+        "Special Roads": 6658,
+        "Local Streets": 109951,
+        "Primary Roads": 296
+      },
+      "counties": {
+        "39017": {
+          "Secondary Roads": 260,
+          "Special Roads": 368,
+          "Local Streets": 7942,
+          "Primary Roads": 2
+        },
+        "39035": {
+          "Local Streets": 15784,
+          "Secondary Roads": 351,
+          "Special Roads": 1073,
+          "Primary Roads": 65
+        },
+        "39049": {
+          "Local Streets": 20970,
+          "Special Roads": 1285,
+          "Secondary Roads": 217,
+          "Primary Roads": 66
+        },
+        "39061": {
+          "Local Streets": 12374,
+          "Special Roads": 829,
+          "Secondary Roads": 166,
+          "Primary Roads": 41
+        },
+        "39093": {
+          "Secondary Roads": 162,
+          "Local Streets": 6319,
+          "Special Roads": 217,
+          "Primary Roads": 18
+        },
+        "39095": {
+          "Local Streets": 7545,
+          "Secondary Roads": 145,
+          "Special Roads": 324,
+          "Primary Roads": 22
+        },
+        "39099": {
+          "Local Streets": 5286,
+          "Secondary Roads": 213,
+          "Special Roads": 437,
+          "Primary Roads": 19
+        },
+        "39113": {
+          "Local Streets": 12359,
+          "Secondary Roads": 146,
+          "Special Roads": 592,
+          "Primary Roads": 17
+        },
+        "39151": {
+          "Local Streets": 10088,
+          "Special Roads": 941,
+          "Secondary Roads": 238,
+          "Primary Roads": 18
+        },
+        "39153": {
+          "Local Streets": 11284,
+          "Secondary Roads": 253,
+          "Special Roads": 592,
+          "Primary Roads": 28
+        }
+      }
+    },
+    "Oklahoma": {
+      "total_counties": 4,
+      "total_roads": 70698,
+      "road_types": {
+        "Local Streets": 59561,
+        "Special Roads": 10541,
+        "Secondary Roads": 408,
+        "Primary Roads": 188
+      },
+      "counties": {
+        "40027": {
+          "Local Streets": 9887,
+          "Special Roads": 3767,
+          "Secondary Roads": 61,
+          "Primary Roads": 16
+        },
+        "40031": {
+          "Local Streets": 7452,
+          "Secondary Roads": 123,
+          "Special Roads": 2731,
+          "Primary Roads": 14
+        },
+        "40109": {
+          "Local Streets": 19898,
+          "Primary Roads": 88,
+          "Secondary Roads": 79,
+          "Special Roads": 3213
+        },
+        "40143": {
+          "Local Streets": 22324,
+          "Secondary Roads": 145,
+          "Special Roads": 830,
+          "Primary Roads": 70
+        }
+      }
+    },
+    "Oregon": {
+      "total_counties": 7,
+      "total_roads": 106870,
+      "road_types": {
+        "Local Streets": 96243,
+        "Special Roads": 9614,
+        "Secondary Roads": 906,
+        "Primary Roads": 107
+      },
+      "counties": {
+        "41005": {
+          "Local Streets": 15983,
+          "Special Roads": 1121,
+          "Secondary Roads": 82,
+          "Primary Roads": 20
+        },
+        "41017": {
+          "Local Streets": 14672,
+          "Secondary Roads": 187,
+          "Special Roads": 417,
+          "Primary Roads": 4
+        },
+        "41029": {
+          "Local Streets": 8370,
+          "Special Roads": 534,
+          "Secondary Roads": 92,
+          "Primary Roads": 12
+        },
+        "41039": {
+          "Special Roads": 3555,
+          "Local Streets": 16677,
+          "Secondary Roads": 129,
+          "Primary Roads": 19
+        },
+        "41047": {
+          "Local Streets": 14054,
+          "Secondary Roads": 191,
+          "Special Roads": 1473,
+          "Primary Roads": 11
+        },
+        "41051": {
+          "Local Streets": 12951,
+          "Secondary Roads": 128,
+          "Special Roads": 1688,
+          "Primary Roads": 29
+        },
+        "41067": {
+          "Local Streets": 13536,
+          "Special Roads": 826,
+          "Secondary Roads": 97,
+          "Primary Roads": 12
+        }
+      }
+    },
+    "Pennsylvania": {
+      "total_counties": 9,
+      "total_roads": 136702,
+      "road_types": {
+        "Local Streets": 115154,
+        "Secondary Roads": 2697,
+        "Special Roads": 18515,
+        "Primary Roads": 336
+      },
+      "counties": {
+        "42003": {
+          "Local Streets": 31655,
+          "Secondary Roads": 496,
+          "Special Roads": 3576,
+          "Primary Roads": 100
+        },
+        "42011": {
+          "Local Streets": 9446,
+          "Primary Roads": 48,
+          "Secondary Roads": 282,
+          "Special Roads": 5884
+        },
+        "42045": {
+          "Local Streets": 8611,
+          "Primary Roads": 24,
+          "Secondary Roads": 200,
+          "Special Roads": 2748
+        },
+        "42049": {
+          "Local Streets": 5432,
+          "Primary Roads": 9,
+          "Secondary Roads": 275,
+          "Special Roads": 493
+        },
+        "42077": {
+          "Local Streets": 9709,
+          "Primary Roads": 14,
+          "Secondary Roads": 128,
+          "Special Roads": 601
+        },
+        "42079": {
+          "Local Streets": 13044,
+          "Primary Roads": 22,
+          "Secondary Roads": 191,
+          "Special Roads": 1352
+        },
+        "42091": {
+          "Primary Roads": 57,
+          "Secondary Roads": 292,
+          "Local Streets": 14774,
+          "Special Roads": 1364
+        },
+        "42101": {
+          "Local Streets": 9027,
+          "Secondary Roads": 380,
+          "Special Roads": 544,
+          "Primary Roads": 46
+        },
+        "42133": {
+          "Local Streets": 13456,
+          "Secondary Roads": 453,
+          "Primary Roads": 16,
+          "Special Roads": 1953
+        }
+      }
+    },
+    "Rhode Island": {
+      "total_counties": 1,
+      "total_roads": 13334,
+      "road_types": {
+        "Local Streets": 11696,
+        "Secondary Roads": 586,
+        "Primary Roads": 47,
+        "Special Roads": 1005
+      },
+      "counties": {
+        "44007": {
+          "Local Streets": 11696,
+          "Secondary Roads": 586,
+          "Primary Roads": 47,
+          "Special Roads": 1005
+        }
+      }
+    },
+    "South Carolina": {
+      "total_counties": 5,
+      "total_roads": 84179,
+      "road_types": {
+        "Local Streets": 76218,
+        "Secondary Roads": 1257,
+        "Special Roads": 6639,
+        "Primary Roads": 65
+      },
+      "counties": {
+        "45019": {
+          "Local Streets": 19456,
+          "Secondary Roads": 197,
+          "Special Roads": 2532,
+          "Primary Roads": 14
+        },
+        "45045": {
+          "Local Streets": 15995,
+          "Secondary Roads": 233,
+          "Special Roads": 819,
+          "Primary Roads": 14
+        },
+        "45051": {
+          "Secondary Roads": 188,
+          "Local Streets": 12397,
+          "Special Roads": 2148,
+          "Primary Roads": 6
+        },
+        "45079": {
+          "Local Streets": 14009,
+          "Secondary Roads": 242,
+          "Special Roads": 568,
+          "Primary Roads": 19
+        },
+        "45083": {
+          "Local Streets": 14361,
+          "Secondary Roads": 397,
+          "Primary Roads": 12,
+          "Special Roads": 572
+        }
+      }
+    },
+    "South Dakota": {
+      "total_counties": 2,
+      "total_roads": 11269,
+      "road_types": {
+        "Local Streets": 9917,
+        "Secondary Roads": 214,
+        "Special Roads": 1122,
+        "Primary Roads": 16
+      },
+      "counties": {
+        "46099": {
+          "Local Streets": 4329,
+          "Secondary Roads": 71,
+          "Special Roads": 264,
+          "Primary Roads": 6
+        },
+        "46103": {
+          "Local Streets": 5588,
+          "Secondary Roads": 143,
+          "Special Roads": 858,
+          "Primary Roads": 10
+        }
+      }
+    },
+    "Tennessee": {
+      "total_counties": 9,
+      "total_roads": 106615,
+      "road_types": {
+        "Local Streets": 88747,
+        "Secondary Roads": 1940,
+        "Special Roads": 15758,
+        "Primary Roads": 170
+      },
+      "counties": {
+        "47037": {
+          "Local Streets": 12049,
+          "Secondary Roads": 344,
+          "Special Roads": 3085,
+          "Primary Roads": 33
+        },
+        "47065": {
+          "Local Streets": 10980,
+          "Special Roads": 2388,
+          "Secondary Roads": 378,
+          "Primary Roads": 32
+        },
+        "47093": {
+          "Local Streets": 12647,
+          "Special Roads": 1189,
+          "Secondary Roads": 225,
+          "Primary Roads": 26
+        },
+        "47125": {
+          "Local Streets": 5432,
+          "Secondary Roads": 169,
+          "Special Roads": 924,
+          "Primary Roads": 2
+        },
+        "47149": {
+          "Local Streets": 6232,
+          "Secondary Roads": 140,
+          "Special Roads": 999,
+          "Primary Roads": 4
+        },
+        "47157": {
+          "Local Streets": 23124,
+          "Special Roads": 3645,
+          "Secondary Roads": 258,
+          "Primary Roads": 43
+        },
+        "47163": {
+          "Local Streets": 6534,
+          "Secondary Roads": 169,
+          "Special Roads": 1703,
+          "Primary Roads": 10
+        },
+        "47179": {
+          "Local Streets": 4995,
+          "Secondary Roads": 117,
+          "Special Roads": 534,
+          "Primary Roads": 14
+        },
+        "47187": {
+          "Local Streets": 6754,
+          "Secondary Roads": 140,
+          "Special Roads": 1291,
+          "Primary Roads": 6
+        }
+      }
+    },
+    "Texas": {
+      "total_counties": 28,
+      "total_roads": 522254,
+      "road_types": {
+        "Local Streets": 440949,
+        "Secondary Roads": 3944,
+        "Special Roads": 76278,
+        "Primary Roads": 1083
+      },
+      "counties": {
+        "48027": {
+          "Local Streets": 9916,
+          "Secondary Roads": 116,
+          "Special Roads": 1177,
+          "Primary Roads": 8
+        },
+        "48029": {
+          "Secondary Roads": 147,
+          "Local Streets": 31753,
+          "Special Roads": 3755,
+          "Primary Roads": 80
+        },
+        "48037": {
+          "Local Streets": 5064,
+          "Secondary Roads": 73,
+          "Special Roads": 990,
+          "Primary Roads": 14
+        },
+        "48039": {
+          "Local Streets": 15901,
+          "Secondary Roads": 179,
+          "Special Roads": 764,
+          "Primary Roads": 12
+        },
+        "48041": {
+          "Local Streets": 4961,
+          "Secondary Roads": 75,
+          "Special Roads": 419,
+          "Primary Roads": 13
+        },
+        "48061": {
+          "Local Streets": 9880,
+          "Secondary Roads": 163,
+          "Primary Roads": 15,
+          "Special Roads": 1680
+        },
+        "48085": {
+          "Local Streets": 24214,
+          "Secondary Roads": 155,
+          "Special Roads": 1567,
+          "Primary Roads": 16
+        },
+        "48091": {
+          "Local Streets": 6085,
+          "Secondary Roads": 30,
+          "Special Roads": 579,
+          "Primary Roads": 2
+        },
+        "48113": {
+          "Secondary Roads": 312,
+          "Local Streets": 35806,
+          "Special Roads": 5107,
+          "Primary Roads": 157
+        },
+        "48121": {
+          "Secondary Roads": 90,
+          "Special Roads": 2778,
+          "Local Streets": 19398,
+          "Primary Roads": 26
+        },
+        "48141": {
+          "Local Streets": 15160,
+          "Secondary Roads": 167,
+          "Special Roads": 804,
+          "Primary Roads": 47
+        },
+        "48157": {
+          "Local Streets": 20958,
+          "Secondary Roads": 98,
+          "Special Roads": 801,
+          "Primary Roads": 40
+        },
+        "48167": {
+          "Local Streets": 11654,
+          "Special Roads": 547,
+          "Primary Roads": 38,
+          "Secondary Roads": 96
+        },
+        "48201": {
+          "Local Streets": 57507,
+          "Primary Roads": 230,
+          "Secondary Roads": 242,
+          "Special Roads": 40012
+        },
+        "48209": {
+          "Local Streets": 5655,
+          "Secondary Roads": 49,
+          "Primary Roads": 5,
+          "Special Roads": 442
+        },
+        "48215": {
+          "Secondary Roads": 247,
+          "Local Streets": 18994,
+          "Special Roads": 1647,
+          "Primary Roads": 8
+        },
+        "48245": {
+          "Local Streets": 8197,
+          "Special Roads": 550,
+          "Secondary Roads": 130,
+          "Primary Roads": 12
+        },
+        "48303": {
+          "Secondary Roads": 243,
+          "Special Roads": 919,
+          "Local Streets": 7851,
+          "Primary Roads": 36
+        },
+        "48309": {
+          "Local Streets": 6329,
+          "Secondary Roads": 143,
+          "Primary Roads": 25,
+          "Special Roads": 843
+        },
+        "48339": {
+          "Local Streets": 16187,
+          "Special Roads": 712,
+          "Secondary Roads": 54,
+          "Primary Roads": 12
+        },
+        "48355": {
+          "Local Streets": 8287,
+          "Secondary Roads": 131,
+          "Special Roads": 1614,
+          "Primary Roads": 35
+        },
+        "48423": {
+          "Local Streets": 8977,
+          "Secondary Roads": 195,
+          "Special Roads": 426,
+          "Primary Roads": 8
+        },
+        "48439": {
+          "Special Roads": 2891,
+          "Local Streets": 37917,
+          "Secondary Roads": 301,
+          "Primary Roads": 127
+        },
+        "48451": {
+          "Local Streets": 7908,
+          "Secondary Roads": 56,
+          "Special Roads": 642,
+          "Primary Roads": 10
+        },
+        "48453": {
+          "Local Streets": 19184,
+          "Special Roads": 2259,
+          "Secondary Roads": 130,
+          "Primary Roads": 71
+        },
+        "48469": {
+          "Secondary Roads": 91,
+          "Local Streets": 4444,
+          "Special Roads": 355
+        },
+        "48479": {
+          "Local Streets": 9924,
+          "Secondary Roads": 116,
+          "Special Roads": 1040,
+          "Primary Roads": 4
+        },
+        "48491": {
+          "Local Streets": 12838,
+          "Special Roads": 958,
+          "Secondary Roads": 115,
+          "Primary Roads": 32
+        }
+      }
+    },
+    "Utah": {
+      "total_counties": 5,
+      "total_roads": 104620,
+      "road_types": {
+        "Local Streets": 100478,
+        "Special Roads": 3054,
+        "Secondary Roads": 1020,
+        "Primary Roads": 68
+      },
+      "counties": {
+        "49005": {
+          "Local Streets": 6959,
+          "Special Roads": 208,
+          "Secondary Roads": 112
+        },
+        "49011": {
+          "Local Streets": 10231,
+          "Secondary Roads": 115,
+          "Special Roads": 278,
+          "Primary Roads": 27
+        },
+        "49035": {
+          "Local Streets": 35462,
+          "Special Roads": 1097,
+          "Secondary Roads": 386,
+          "Primary Roads": 26
+        },
+        "49049": {
+          "Local Streets": 38364,
+          "Secondary Roads": 269,
+          "Special Roads": 1072,
+          "Primary Roads": 4
+        },
+        "49057": {
+          "Local Streets": 9462,
+          "Special Roads": 399,
+          "Secondary Roads": 138,
+          "Primary Roads": 11
+        }
+      }
+    },
+    "Virginia": {
+      "total_counties": 17,
+      "total_roads": 143257,
+      "road_types": {
+        "Secondary Roads": 2502,
+        "Local Streets": 122444,
+        "Special Roads": 17935,
+        "Primary Roads": 376
+      },
+      "counties": {
+        "51013": {
+          "Secondary Roads": 123,
+          "Local Streets": 1826,
+          "Special Roads": 548,
+          "Primary Roads": 37
+        },
+        "51041": {
+          "Local Streets": 13637,
+          "Special Roads": 3177,
+          "Secondary Roads": 89,
+          "Primary Roads": 29
+        },
+        "51059": {
+          "Local Streets": 21125,
+          "Secondary Roads": 321,
+          "Special Roads": 2067,
+          "Primary Roads": 59
+        },
+        "51087": {
+          "Local Streets": 8314,
+          "Secondary Roads": 212,
+          "Primary Roads": 18,
+          "Special Roads": 404
+        },
+        "51107": {
+          "Local Streets": 10851,
+          "Secondary Roads": 122,
+          "Special Roads": 1562,
+          "Primary Roads": 24
+        },
+        "51153": {
+          "Local Streets": 11614,
+          "Secondary Roads": 147,
+          "Special Roads": 3160,
+          "Primary Roads": 11
+        },
+        "51161": {
+          "Local Streets": 7225,
+          "Secondary Roads": 139,
+          "Special Roads": 1375,
+          "Primary Roads": 14
+        },
+        "51510": {
+          "Local Streets": 1309,
+          "Secondary Roads": 92,
+          "Special Roads": 362,
+          "Primary Roads": 33
+        },
+        "51550": {
+          "Local Streets": 6522,
+          "Primary Roads": 22,
+          "Secondary Roads": 159,
+          "Special Roads": 543
+        },
+        "51650": {
+          "Secondary Roads": 149,
+          "Local Streets": 4412,
+          "Special Roads": 284,
+          "Primary Roads": 13
+        },
+        "51680": {
+          "Local Streets": 2594,
+          "Secondary Roads": 77,
+          "Primary Roads": 18,
+          "Special Roads": 429
+        },
+        "51700": {
+          "Local Streets": 4406,
+          "Secondary Roads": 93,
+          "Primary Roads": 6,
+          "Special Roads": 315
+        },
+        "51710": {
+          "Local Streets": 5790,
+          "Special Roads": 505,
+          "Secondary Roads": 210,
+          "Primary Roads": 15
+        },
+        "51740": {
+          "Secondary Roads": 92,
+          "Primary Roads": 12,
+          "Local Streets": 2487,
+          "Special Roads": 286
+        },
+        "51760": {
+          "Local Streets": 3420,
+          "Special Roads": 326,
+          "Secondary Roads": 224,
+          "Primary Roads": 35
+        },
+        "51800": {
+          "Local Streets": 5036,
+          "Secondary Roads": 116,
+          "Special Roads": 1437,
+          "Primary Roads": 12
+        },
+        "51810": {
+          "Local Streets": 11876,
+          "Secondary Roads": 137,
+          "Special Roads": 1155,
+          "Primary Roads": 18
+        }
+      }
+    },
+    "Washington": {
+      "total_counties": 8,
+      "total_roads": 188261,
+      "road_types": {
+        "Local Streets": 175972,
+        "Special Roads": 11103,
+        "Secondary Roads": 1056,
+        "Primary Roads": 130
+      },
+      "counties": {
+        "53011": {
+          "Local Streets": 15023,
+          "Special Roads": 746,
+          "Secondary Roads": 96,
+          "Primary Roads": 12
+        },
+        "53033": {
+          "Local Streets": 62881,
+          "Special Roads": 3401,
+          "Secondary Roads": 317,
+          "Primary Roads": 54
+        },
+        "53053": {
+          "Local Streets": 24902,
+          "Secondary Roads": 129,
+          "Special Roads": 664,
+          "Primary Roads": 22
+        },
+        "53061": {
+          "Local Streets": 24528,
+          "Special Roads": 1700,
+          "Secondary Roads": 214,
+          "Primary Roads": 16
+        },
+        "53063": {
+          "Local Streets": 14579,
+          "Secondary Roads": 113,
+          "Special Roads": 1928,
+          "Primary Roads": 12
+        },
+        "53067": {
+          "Local Streets": 10862,
+          "Special Roads": 1497,
+          "Secondary Roads": 46,
+          "Primary Roads": 6
+        },
+        "53073": {
+          "Local Streets": 8198,
+          "Special Roads": 806,
+          "Secondary Roads": 78,
+          "Primary Roads": 2
+        },
+        "53077": {
+          "Local Streets": 14999,
+          "Secondary Roads": 63,
+          "Special Roads": 361,
+          "Primary Roads": 6
+        }
+      }
+    },
+    "West Virginia": {
+      "total_counties": 2,
+      "total_roads": 30292,
+      "road_types": {
+        "Local Streets": 27500,
+        "Secondary Roads": 379,
+        "Special Roads": 2397,
+        "Primary Roads": 16
+      },
+      "counties": {
+        "54011": {
+          "Local Streets": 4464,
+          "Secondary Roads": 70,
+          "Special Roads": 732,
+          "Primary Roads": 4
+        },
+        "54039": {
+          "Special Roads": 1665,
+          "Secondary Roads": 309,
+          "Local Streets": 23036,
+          "Primary Roads": 12
+        }
+      }
+    },
+    "Wisconsin": {
+      "total_counties": 10,
+      "total_roads": 69695,
+      "road_types": {
+        "Local Streets": 64423,
+        "Secondary Roads": 1568,
+        "Special Roads": 3527,
+        "Primary Roads": 177
+      },
+      "counties": {
+        "55009": {
+          "Local Streets": 5543,
+          "Secondary Roads": 163,
+          "Special Roads": 287,
+          "Primary Roads": 18
+        },
+        "55025": {
+          "Local Streets": 16268,
+          "Primary Roads": 42,
+          "Secondary Roads": 220,
+          "Special Roads": 692
+        },
+        "55035": {
+          "Secondary Roads": 70,
+          "Primary Roads": 9,
+          "Local Streets": 3076,
+          "Special Roads": 238
+        },
+        "55059": {
+          "Local Streets": 3508,
+          "Secondary Roads": 99,
+          "Special Roads": 185,
+          "Primary Roads": 6
+        },
+        "55063": {
+          "Secondary Roads": 139,
+          "Local Streets": 3134,
+          "Special Roads": 261,
+          "Primary Roads": 10
+        },
+        "55073": {
+          "Local Streets": 4234,
+          "Secondary Roads": 97,
+          "Special Roads": 183,
+          "Primary Roads": 12
+        },
+        "55079": {
+          "Local Streets": 8756,
+          "Special Roads": 797,
+          "Secondary Roads": 232,
+          "Primary Roads": 47
+        },
+        "55087": {
+          "Local Streets": 4296,
+          "Secondary Roads": 139,
+          "Special Roads": 339,
+          "Primary Roads": 8
+        },
+        "55101": {
+          "Secondary Roads": 196,
+          "Local Streets": 4065,
+          "Special Roads": 118,
+          "Primary Roads": 7
+        },
+        "55133": {
+          "Local Streets": 11543,
+          "Secondary Roads": 213,
+          "Special Roads": 427,
+          "Primary Roads": 18
+        }
+      }
+    },
+    "Wyoming": {
+      "total_counties": 2,
+      "total_roads": 21660,
+      "road_types": {
+        "Local Streets": 18082,
+        "Secondary Roads": 219,
+        "Special Roads": 3340,
+        "Primary Roads": 19
+      },
+      "counties": {
+        "56021": {
+          "Local Streets": 4771,
+          "Secondary Roads": 96,
+          "Special Roads": 1169,
+          "Primary Roads": 11
+        },
+        "56025": {
+          "Secondary Roads": 123,
+          "Primary Roads": 8,
+          "Local Streets": 13311,
+          "Special Roads": 2171
+        }
+      }
+    }
+  }
+}
