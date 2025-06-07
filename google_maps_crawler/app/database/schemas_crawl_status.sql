@@ -1,7 +1,7 @@
 -- Create table to track crawl status for each road-keyword combination
 CREATE TABLE IF NOT EXISTS crawl_status (
     id SERIAL PRIMARY KEY,
-    road_linearid TEXT NOT NULL,
+    road_osm_id BIGINT NOT NULL,
     keyword TEXT NOT NULL,
     status TEXT NOT NULL CHECK (status IN ('pending', 'processing', 'completed', 'failed')),
     businesses_found INTEGER DEFAULT 0,
@@ -10,11 +10,11 @@ CREATE TABLE IF NOT EXISTS crawl_status (
     updated_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
     
     -- Unique constraint: one status per road-keyword combination
-    UNIQUE(road_linearid, keyword)
+    UNIQUE(road_osm_id, keyword)
 );
 
 -- Index for fast lookups
-CREATE INDEX idx_crawl_status_road ON crawl_status(road_linearid);
+CREATE INDEX idx_crawl_status_road ON crawl_status(road_osm_id);
 CREATE INDEX idx_crawl_status_keyword ON crawl_status(keyword);
 CREATE INDEX idx_crawl_status_status ON crawl_status(status);
 

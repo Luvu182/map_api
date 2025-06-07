@@ -7,9 +7,13 @@ export const fetchStats = async () => {
   return response.data;
 };
 
-export const fetchUnprocessedRoads = async (limit = 100) => {
+export const fetchUnprocessedRoads = async (limit = 100, stateCode = null, countyFips = null) => {
+  const params = { limit };
+  if (stateCode) params.state_code = stateCode;
+  if (countyFips) params.county_fips = countyFips;
+  
   const response = await axios.get(`${API_BASE_URL}/roads/unprocessed`, {
-    params: { limit }
+    params
   });
   return response.data;
 };
@@ -39,15 +43,16 @@ export const startCrawl = async (stateCode, limit) => {
   return response.data;
 };
 
-export const searchRoads = async (query) => {
-  // This would connect to Supabase directly or through your API
-  // For now, return mock data
-  return {
-    roads: [
-      { linearid: '123', fullname: 'Broadway', state_code: 'NY', county_fips: '36061' },
-      { linearid: '456', fullname: 'Main Street', state_code: 'CA', county_fips: '06037' }
-    ]
+export const searchRoads = async (query, stateCode = null, countyFips = null, limit = 50) => {
+  const params = { 
+    q: query,
+    limit 
   };
+  if (stateCode) params.state_code = stateCode;
+  if (countyFips) params.county_fips = countyFips;
+  
+  const response = await axios.get(`${API_BASE_URL}/roads/search`, { params });
+  return response.data;
 };
 
 export const fetchBusinessesForRoad = async (roadId) => {

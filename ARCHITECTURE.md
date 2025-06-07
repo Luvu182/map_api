@@ -13,12 +13,13 @@
 - Full code: State + County (5 chữ số)
 - Ví dụ: 01001 = Autauga County, Alabama
 
-### Cấp 3: Road Type (Loại đường) - TẤT CẢ NGANG CẤP
+### Cấp 3: Road Type (Loại đường) - OSM Highway Types
 ```
-├── Primary Roads (S1100)      # Cao tốc, quốc lộ chính
-├── Secondary Roads (S1200)    # Tỉnh lộ, đường phụ
-├── Local Streets (S1400)      # Đường địa phương
-└── Special Roads (S1500+)     # Đường đặc biệt
+├── motorway                   # Cao tốc liên bang
+├── trunk/primary             # Quốc lộ, đường chính
+├── secondary/tertiary        # Đường cấp 2, cấp 3
+├── residential               # Đường dân cư
+└── service                   # Đường dịch vụ
 ```
 
 ### Cấp 4: Individual Roads (Đường cụ thể)
@@ -43,7 +44,7 @@
 2. Mỗi city có thể nằm trong 1 hoặc nhiều county
 3. Cần mapping city → county(s) để hiển thị đúng
 
-## Database Structure (Implemented in Supabase)
+## Database Structure (Self-hosted PostgreSQL)
 
 ### Table: states (51 records)
 ```sql

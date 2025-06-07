@@ -116,7 +116,7 @@ const MapView = ({ onRoadSelect, selectedRoad }) => {
       {selectedRoad && (
         <div className="bg-white p-4 rounded-lg shadow">
           <h3 className="font-semibold mb-2">Selected Road</h3>
-          <p className="text-sm">Name: {selectedRoad.fullname}</p>
+          <p className="text-sm">Name: {selectedRoad.name}</p>
           <p className="text-sm">State: {selectedRoad.state_code}</p>
           <p className="text-sm">Category: {selectedRoad.road_category}</p>
         </div>

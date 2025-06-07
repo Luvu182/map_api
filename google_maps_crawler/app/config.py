@@ -6,7 +6,14 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-# Supabase
+# Database (PostgreSQL)
+DB_HOST = os.getenv("DB_HOST", "localhost")
+DB_PORT = os.getenv("DB_PORT", "5432")
+DB_NAME = os.getenv("DB_NAME", "roads_db")
+DB_USER = os.getenv("DB_USER", "postgres")
+DB_PASSWORD = os.getenv("DB_PASSWORD", "roadsdb2024secure")
+
+# Legacy Supabase (keep for reference)
 SUPABASE_URL = os.getenv("SUPABASE_URL")
 SUPABASE_KEY = os.getenv("SUPABASE_KEY")
 

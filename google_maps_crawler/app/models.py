@@ -21,7 +21,7 @@ class Business(BaseModel):
     opening_hours: Optional[Dict]
     
     # Road association
-    road_linearid: str
+    road_osm_id: int
     road_name: Optional[str]
     distance_to_road: float
     
@@ -30,17 +30,22 @@ class Business(BaseModel):
     data_source: str = "google_maps"
 
 class Road(BaseModel):
-    """Road from Supabase"""
-    linearid: str
-    fullname: Optional[str]
-    road_category: str
+    """Road from OSM data"""
+    osm_id: int
+    name: Optional[str]
+    highway: str  # OSM road type
+    ref: Optional[str]  # Road reference (e.g., I-5, US-101)
     county_fips: str
     state_code: str
+    lanes: Optional[int]
+    maxspeed: Optional[str]
+    surface: Optional[str]
+    geom_text: Optional[str]  # Geometry as WKT
 
 class CrawlJob(BaseModel):
     """Crawl job for a road or area"""
     job_id: str
-    road_linearid: str
+    road_osm_id: int
     road_name: Optional[str]
     county_fips: str
     state_code: str

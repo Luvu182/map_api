@@ -6,11 +6,12 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 from typing import Optional
 import logging
-from .database.supabase_client import SupabaseClient
+from .database.postgres_client import PostgresClient
 from .crawler.google_maps import GoogleMapsClient
 from .crawler.road_sampler import RoadSampler
 from .models import CrawlStats
 from .config import BUSINESS_TYPES, CRAWLER_DELAY_SECONDS
+from .crawler.enhanced_search import search_roads_enhanced
 import time
 
 # Configure logging
@@ -34,7 +35,7 @@ app.add_middleware(
 )
 
 # Initialize clients
-db = SupabaseClient()
+db = PostgresClient()
 gmaps = GoogleMapsClient()
 sampler = RoadSampler()
 
@@ -53,48 +54,55 @@ async def root():
 
 @app.get("/stats", response_model=CrawlStats)
 async def get_stats():
-    """Get crawling statistics - fast version with cached static data"""
-    # Use hardcoded values for static data to avoid slow queries
+    """Get crawling statistics - fast version with OSM data counts"""
+    # Query OSM data stats
+    from .database.postgres_client import execute_query
+    
+    # Get stats from cache table (INSTANT!)
+    stats_result = execute_query("""
+        SELECT 
+            total_segments as total_roads,
+            unique_roads_with_names as roads_with_names,
+            last_updated
+        FROM osm_stats_cache
+        WHERE id = 1
+    """, fetch_one=True)
+    
+    result = stats_result if stats_result else {
+        'total_roads': 0,
+        'roads_with_names': 0
+    }
+    
+    # Get dynamic crawl stats
+    crawl_stats = db.get_crawl_stats()
+    
     stats = {
-        'total_roads': 5155787,  # Static - won't change
-        'roads_with_names': 3428598,  # Static - exact count (66.5%)
-        'roads_processed': 0,  # TODO: Query this dynamically when crawling starts
-        'businesses_found': 0,  # TODO: Query this dynamically when crawling starts
-        'avg_businesses_per_road': 0.0,
+        'total_roads': result['total_roads'] if result else 0,
+        'roads_with_names': result['roads_with_names'] if result else 0,
+        'roads_processed': crawl_stats.get('roads_processed', 0),
+        'businesses_found': crawl_stats.get('businesses_found', 0),
+        'avg_businesses_per_road': crawl_stats.get('avg_businesses_per_road', 0.0),
         'top_business_types': []
     }
     
-    # Only query dynamic data if crawling has started
-    # For now, return static data for instant response
     return CrawlStats(**stats)
 
 @app.get("/stats/live", response_model=CrawlStats)
 async def get_live_stats():
-    """Get real-time crawling statistics - slower but accurate"""
-    stats = db.get_crawl_stats()
-    
-    # Merge with static values
-    if not stats:
-        stats = {}
-    
-    stats['total_roads'] = 5155787  # Use static value
-    stats['roads_with_names'] = 3400000  # Use static value
-    
-    # Ensure all required fields exist
-    stats.setdefault('roads_processed', 0)
-    stats.setdefault('businesses_found', 0)
-    stats.setdefault('avg_businesses_per_road', 0.0)
-    stats.setdefault('top_business_types', [])
-    
-    return CrawlStats(**stats)
+    """Get real-time crawling statistics - same as /stats for OSM"""
+    return await get_stats()
 
 @app.get("/roads/unprocessed")
-async def get_unprocessed_roads(limit: int = 100):
-    """Get list of unprocessed roads"""
-    roads = db.get_unprocessed_roads(limit=limit)
+async def get_unprocessed_roads(
+    limit: int = 100,
+    state_code: Optional[str] = None,
+    county_fips: Optional[str] = None
+):
+    """Get list of unique road names with optional filters"""
+    roads = db.get_unique_road_names(limit=limit, state_code=state_code, county_fips=county_fips)
     return {
         "count": len(roads),
-        "roads": [road.model_dump() for road in roads]
+        "roads": roads
     }
 
 @app.get("/roads/crawl-status")
@@ -132,6 +140,37 @@ async def get_states_summary():
     summary = db.get_states_summary()
     return summary
 
+@app.get("/roads/search")
+async def search_roads(
+    q: str,
+    state_code: Optional[str] = None,
+    county_fips: Optional[str] = None,
+    limit: int = 50
+):
+    """Enhanced road search with name normalization (handles OSM vs Google differences)"""
+    from .database.postgres_client import get_connection
+    
+    if not q or len(q) < 2:
+        raise HTTPException(status_code=400, detail="Search query must be at least 2 characters")
+    
+    try:
+        conn = get_connection()
+        results = search_roads_enhanced(conn, q, state_code, county_fips, limit)
+        
+        return {
+            "query": q,
+            "normalized_search": True,
+            "count": len(results),
+            "results": results,
+            "note": "Results include normalized variations (e.g., '10th Avenue' also searches for '10th Ave', '10th Street', 'W 10th St')"
+        }
+    except Exception as e:
+        logger.error(f"Search error: {e}")
+        raise HTTPException(status_code=500, detail=str(e))
+    finally:
+        if conn:
+            conn.close()
+
 @app.post("/crawl/road/{road_id}")
 async def crawl_single_road(
     road_id: str,
@@ -140,11 +179,33 @@ async def crawl_single_road(
 ):
     """Crawl a single road with specific keyword"""
     # Get road details
-    road_response = db.client.table('roads').select('*').eq('linearid', road_id).execute()
-    if not road_response.data:
+    # Get road details using PostgreSQL
+    from .database.postgres_client import execute_query
+    road_data = execute_query(
+        """
+        SELECT 
+            osm_id,
+            name,
+            highway,
+            ref,
+            county_fips,
+            state_code,
+            ST_AsText(geometry) as geom_text,
+            ST_X(ST_Centroid(geometry)) as center_lon,
+            ST_Y(ST_Centroid(geometry)) as center_lat,
+            lanes,
+            maxspeed,
+            surface
+        FROM osm_roads_main 
+        WHERE osm_id = %s
+        """, 
+        (int(road_id),), 
+        fetch_one=True
+    )
+    if not road_data:
         raise HTTPException(status_code=404, detail="Road not found")
     
-    road_data = road_response.data[0]
+    # road_data is already a dict from execute_query
     
     # Update status to processing
     db.update_crawl_status(road_id, keyword, 'processing')
@@ -157,36 +218,64 @@ async def crawl_single_road(
     )
     
     return {
-        "message": f"Started crawling {road_data.get('fullname', road_id)} for '{keyword}'",
+        "message": f"Started crawling {road_data.get('name', road_id)} for '{keyword}'",
         "road_id": road_id,
         "keyword": keyword
     }
 
 async def crawl_road_with_keyword(road_data: dict, keyword: str):
-    """Crawl businesses along a road using text search with keyword"""
-    road_id = road_data['linearid']
-    road_name = road_data.get('fullname', '')
+    """Crawl businesses along a road using enhanced search strategy"""
+    from .crawler.enhanced_search import EnhancedRoadSearch
+    
+    road_id = road_data['osm_id']
+    road_name = road_data.get('name', '')
     
     logger.info(f"Crawling road {road_name} for keyword: {keyword}")
     
     try:
-        # TODO: Implement actual Google Maps Text Search
-        # For now, simulate the search
-        search_query = f"{keyword} near {road_name}"
+        # Get enhanced search information
+        searcher = EnhancedRoadSearch()
+        search_info = searcher.get_search_info(road_id)
         
-        # Simulate finding some businesses
-        import random
-        businesses_found = random.randint(0, 10)
+        if not search_info:
+            raise Exception(f"Could not get search info for road {road_id}")
         
-        # Update status to completed
-        db.update_crawl_status(
-            road_id, 
-            keyword, 
-            'completed',
-            businesses_found=businesses_found
+        logger.info(f"Using name: {road_name} for search")
+        
+        # Try multiple search strategies
+        total_businesses = 0
+        
+        # Strategy 1: Search by coordinates (most reliable)
+        if search_info['center_point'][0] and search_info['center_point'][1]:
+            search_params = searcher.build_search_query(keyword, search_info, 'coordinates')
+            logger.info(f"Searching by coordinates: {search_params['location']} with radius {search_params['radius']}m")
+            # TODO: Call Google Maps API with coordinates
+            # results = gmaps.nearby_search(**search_params)
+            # total_businesses += len(results)
+        
+        # Strategy 2: Search by text with proper name
+        search_params = searcher.build_search_query(keyword, search_info, 'text_search')
+        logger.info(f"Text search query: {search_params['query']}")
+        # TODO: Call Google Maps API with text search
+        # results = gmaps.text_search(search_params['query'])
+        # total_businesses += len(results)
+        
+        # Get all segments to mark as complete
+        all_segments = execute_query(
+            "SELECT osm_id FROM osm_roads_main WHERE name = %s AND county_fips = %s",
+            (road_name, road_data.get('county_fips'))
         )
         
-        logger.info(f"Completed crawl for {road_name}, found {businesses_found} businesses")
+        # Update crawl status for all segments
+        for segment in all_segments:
+            db.update_crawl_status(
+                str(segment['osm_id']), 
+                keyword, 
+                'completed',
+                businesses_found=total_businesses
+            )
+        
+        logger.info(f"Completed crawl for {road_name} ({len(all_segments)} segments, {total_businesses} businesses)")
         
     except Exception as e:
         logger.error(f"Error crawling road {road_id}: {e}")
@@ -199,7 +288,7 @@ async def crawl_road_with_keyword(road_data: dict, keyword: str):
 
 async def crawl_road(road, job_id: str):
     """Crawl businesses along a single road"""
-    logger.info(f"Starting crawl for road: {road.fullname or road.linearid}")
+    logger.info(f"Starting crawl for road: {road.name or road.osm_id}")
     
     # Update job status
     db.update_crawl_job(job_id, "processing")
@@ -207,7 +296,7 @@ async def crawl_road(road, job_id: str):
     try:
         # Generate sample points along the road
         sample_points = sampler.generate_sample_points_by_name(
-            road.fullname or "",
+            road.name or "",
             road.county_fips,
             num_points=5
         )
@@ -234,8 +323,8 @@ async def crawl_road(road, job_id: str):
                     # Parse business data
                     business = gmaps.parse_business(
                         place,
-                        road.linearid,
-                        road.fullname
+                        road.osm_id,
+                        road.name
                     )
                     all_businesses.append(business)
                 
@@ -250,10 +339,10 @@ async def crawl_road(road, job_id: str):
         
         # Update job status
         db.update_crawl_job(job_id, "completed", businesses_found=saved_count)
-        logger.info(f"Completed crawl for road: {road.fullname}, found {saved_count} businesses")
+        logger.info(f"Completed crawl for road: {road.name}, found {saved_count} businesses")
         
     except Exception as e:
-        logger.error(f"Error crawling road {road.linearid}: {e}")
+        logger.error(f"Error crawling road {road.osm_id}: {e}")
         db.update_crawl_job(job_id, "failed", error=str(e))
 
 @app.get("/health")

@@ -1,0 +1,39 @@
+version: '3.8'
+
+services:
+  osm-processor:
+    image: ghcr.io/openstreetmap/osmium-tool:latest
+    container_name: osm-processor
+    volumes:
+      - ./raw_data/data_osm:/data
+      - ./output/osm_processed:/output
+    working_dir: /data
+    command: /bin/sh
+    stdin_open: true
+    tty: true
+
+  gdal-processor:
+    image: ghcr.io/osgeo/gdal:ubuntu-small-latest
+    container_name: gdal-processor
+    volumes:
+      - ./raw_data/data_osm:/data
+      - ./output/osm_processed:/output
+      - ./scripts:/scripts
+    working_dir: /data
+    command: /bin/bash
+    stdin_open: true
+    tty: true
+
+  osm-python:
+    build:
+      context: .
+      dockerfile: Dockerfile.osm
+    container_name: osm-python
+    volumes:
+      - ./raw_data/data_osm:/data
+      - ./output/osm_processed:/output
+      - ./scripts:/scripts
+    working_dir: /data
+    command: /bin/bash
+    stdin_open: true
+    tty: true

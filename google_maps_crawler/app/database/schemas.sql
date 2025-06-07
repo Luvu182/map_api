@@ -1,4 +1,4 @@
--- Businesses table
+-- Businesses table (OSM version)
 CREATE TABLE IF NOT EXISTS businesses (
     id BIGSERIAL PRIMARY KEY,
     place_id VARCHAR(255) UNIQUE NOT NULL,
@@ -14,8 +14,8 @@ CREATE TABLE IF NOT EXISTS businesses (
     website TEXT,
     opening_hours JSONB,
     
-    -- Road association
-    road_linearid VARCHAR(30) REFERENCES roads(linearid),
+    -- Road association (OSM)
+    road_osm_id BIGINT,
     road_name TEXT,
     distance_to_road DECIMAL(10, 2), -- meters
     
@@ -29,17 +29,17 @@ CREATE TABLE IF NOT EXISTS businesses (
 );
 
 -- Indexes for performance
-CREATE INDEX idx_businesses_road ON businesses(road_linearid);
+CREATE INDEX idx_businesses_road ON businesses(road_osm_id);
 CREATE INDEX idx_businesses_location ON businesses USING GIST (
     ST_MakePoint(lng, lat)
 );
 CREATE INDEX idx_businesses_types ON businesses USING GIN(types);
 CREATE INDEX idx_businesses_name ON businesses USING gin(name gin_trgm_ops);
 
--- Crawl jobs table
+-- Crawl jobs table (OSM version)
 CREATE TABLE IF NOT EXISTS crawl_jobs (
     job_id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-    road_linearid VARCHAR(30) REFERENCES roads(linearid),
+    road_osm_id BIGINT,
     road_name TEXT,
     county_fips VARCHAR(5),
     state_code VARCHAR(2),
@@ -56,44 +56,51 @@ CREATE TABLE IF NOT EXISTS crawl_jobs (
 
 -- Index for job processing
 CREATE INDEX idx_crawl_jobs_status ON crawl_jobs(status);
-CREATE INDEX idx_crawl_jobs_road ON crawl_jobs(road_linearid);
+CREATE INDEX idx_crawl_jobs_road ON crawl_jobs(road_osm_id);
 
--- View for business statistics by road
+-- View for business statistics by road (OSM version)
 CREATE VIEW road_business_stats AS
 SELECT 
-    r.linearid,
-    r.fullname as road_name,
-    r.road_category,
+    r.osm_id,
+    r.name as road_name,
+    r.highway as road_type,
     r.county_fips,
     r.state_code,
     COUNT(b.id) as business_count,
     ARRAY_AGG(DISTINCT unnest(b.types)) as business_types,
     AVG(b.rating) as avg_rating,
     AVG(b.distance_to_road) as avg_distance
-FROM roads r
-LEFT JOIN businesses b ON r.linearid = b.road_linearid
-GROUP BY r.linearid, r.fullname, r.road_category, r.county_fips, r.state_code;
+FROM osm_roads_main r
+LEFT JOIN businesses b ON r.osm_id = b.road_osm_id
+GROUP BY r.osm_id, r.name, r.highway, r.county_fips, r.state_code;
 
--- Function to get nearby roads for a location
+-- Function to get nearby roads for a location (OSM version)
 CREATE OR REPLACE FUNCTION get_nearby_roads(
     lat DECIMAL,
     lng DECIMAL, 
     radius_meters INTEGER DEFAULT 100
 )
 RETURNS TABLE (
-    linearid VARCHAR,
-    fullname TEXT,
+    osm_id BIGINT,
+    name TEXT,
     distance_meters DECIMAL
 ) AS $$
 BEGIN
-    -- This is a placeholder - would need PostGIS for actual implementation
-    -- For now, return roads in the same county
     RETURN QUERY
     SELECT 
-        r.linearid,
-        r.fullname,
-        0::DECIMAL as distance_meters
-    FROM roads r
+        r.osm_id,
+        r.name,
+        ST_Distance(
+            ST_SetSRID(ST_MakePoint(lng, lat), 4326)::geography,
+            r.geometry::geography
+        ) as distance_meters
+    FROM osm_roads_main r
+    WHERE ST_DWithin(
+        ST_SetSRID(ST_MakePoint(lng, lat), 4326)::geography,
+        r.geometry::geography,
+        radius_meters
+    )
+    ORDER BY distance_meters
     LIMIT 10;
 END;
 $$ LANGUAGE plpgsql;

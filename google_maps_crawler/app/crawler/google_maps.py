@@ -95,7 +95,7 @@ class GoogleMapsClient:
             logger.error(f"Error geocoding address: {e}")
             return None
     
-    def parse_business(self, place_data: Dict, road_linearid: str, road_name: str = None) -> Business:
+    def parse_business(self, place_data: Dict, road_osm_id: int, road_name: str = None) -> Business:
         """Parse Google Maps place data into Business model"""
         
         # Get location
@@ -124,7 +124,7 @@ class GoogleMapsClient:
             phone_number=place_data.get('formatted_phone_number'),
             website=place_data.get('website'),
             opening_hours=opening_hours,
-            road_linearid=road_linearid,
+            road_osm_id=road_osm_id,
             road_name=road_name,
             distance_to_road=0,  # TODO: Calculate actual distance
             crawled_at=datetime.utcnow()

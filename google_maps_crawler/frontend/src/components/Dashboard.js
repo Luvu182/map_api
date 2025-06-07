@@ -20,13 +20,13 @@ const Dashboard = ({ stats, onRefresh }) => {
     }]
   };
 
-  // Road category distribution - ACTUAL numbers from your import
+  // Road category distribution - OSM data
   const roadCategoryData = {
-    labels: ['Local Streets (88.7%)', 'Special Roads (10.4%)', 'Secondary Roads (0.7%)', 'Primary Roads (0.3%)'],
+    labels: ['Residential', 'Service', 'Unclassified', 'Primary/Secondary', 'Highway/Trunk'],
     datasets: [{
-      label: 'Road Count',
-      data: [4573456, 534952, 34172, 13207], // Your actual import numbers
-      backgroundColor: ['#10B981', '#F59E0B', '#3B82F6', '#EF4444']
+      label: 'Segments',
+      data: [16294466, 5863455, 3472845, 1234678, 292000], // Approximate OSM distribution
+      backgroundColor: ['#10B981', '#F59E0B', '#3B82F6', '#8B5CF6', '#EF4444']
     }]
   };
 
@@ -35,15 +35,15 @@ const Dashboard = ({ stats, onRefresh }) => {
       {/* Stats Cards */}
       <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
         <StatCard
-          title="Total Roads"
+          title="Total Segments"
           value={stats.total_roads?.toLocaleString() || '0'}
-          subtitle="In database"
+          subtitle="27.16M road segments in database"
           color="blue"
         />
         <StatCard
-          title="Roads with Names"
+          title="Unique Roads with Names"
           value={stats.roads_with_names?.toLocaleString() || '0'}
-          subtitle="Available for crawling"
+          subtitle="Available for crawling (grouped by name + county)"
           color="green"
         />
         <StatCard
@@ -110,11 +110,11 @@ const Dashboard = ({ stats, onRefresh }) => {
           </div>
           
           <div className="space-y-3">
-            <StatusItem label="Database" value="Supabase PostgreSQL" status="online" />
-            <StatusItem label="Total Size" value="~2.1 GB" />
-            <StatusItem label="Tables" value="roads, states, counties, cities" />
-            <StatusItem label="Indexes" value="6 active" status="online" />
-            <StatusItem label="Query Performance" value="Optimized with indexes" />
+            <StatusItem label="Database" value="Self-hosted PostgreSQL" status="online" />
+            <StatusItem label="Total Size" value="~15 GB" />
+            <StatusItem label="Tables" value="osm_roads_main, counties, states" />
+            <StatusItem label="Indexes" value="9 active" status="online" />
+            <StatusItem label="Query Performance" value="<1ms with cache" status="online" />
           </div>
         </div>
 
@@ -143,33 +143,33 @@ const Dashboard = ({ stats, onRefresh }) => {
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           <div>
-            <h4 className="text-sm font-medium text-gray-600 mb-2">Roads with Names</h4>
+            <h4 className="text-sm font-medium text-gray-600 mb-2">Road Segments with Names</h4>
             <ProgressBar
               label=""
-              current={3400000}
-              total={5155787}
+              current={7150485}
+              total={27157444}
             />
-            <p className="text-xs text-gray-500 mt-1">66% have searchable names</p>
+            <p className="text-xs text-gray-500 mt-1">26.3% of segments have names</p>
           </div>
           
           <div>
-            <h4 className="text-sm font-medium text-gray-600 mb-2">Primary/Secondary Roads</h4>
+            <h4 className="text-sm font-medium text-gray-600 mb-2">Unique Roads (Grouped by Name + County)</h4>
             <ProgressBar
               label=""
-              current={47379}
-              total={5155787}
+              current={2768406}
+              total={7150485}
             />
-            <p className="text-xs text-gray-500 mt-1">0.9% major roads (100% named)</p>
+            <p className="text-xs text-gray-500 mt-1">2.77M unique roads (2.6 segments/road avg)</p>
           </div>
           
           <div>
-            <h4 className="text-sm font-medium text-gray-600 mb-2">Duplicate Roads Removed</h4>
+            <h4 className="text-sm font-medium text-gray-600 mb-2">Import Status</h4>
             <ProgressBar
               label=""
-              current={108000}
-              total={5263747}
+              current={49}
+              total={49}
             />
-            <p className="text-xs text-gray-500 mt-1">2% were cross-boundary duplicates</p>
+            <p className="text-xs text-gray-500 mt-1">All 49 states imported successfully!</p>
           </div>
         </div>
       </div>
