@@ -1,12 +1,31 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Chart as ChartJS, ArcElement, Tooltip, Legend, CategoryScale, LinearScale, BarElement } from 'chart.js';
 import { Doughnut, Bar } from 'react-chartjs-2';
+import { useLanguage } from '../contexts/LanguageContext';
+import { t } from '../translations/translations';
 
 ChartJS.register(ArcElement, Tooltip, Legend, CategoryScale, LinearScale, BarElement);
 
 const Dashboard = ({ stats, onRefresh }) => {
+  const { language } = useLanguage();
+  const [apiUsage, setApiUsage] = useState(null);
+  
+  useEffect(() => {
+    fetchApiUsage();
+  }, []);
+  
+  const fetchApiUsage = async () => {
+    try {
+      const response = await fetch('http://localhost:8000/api/usage');
+      const data = await response.json();
+      setApiUsage(data);
+    } catch (error) {
+      console.error('Failed to fetch API usage:', error);
+    }
+  };
+  
   if (!stats) {
-    return <div className="text-center py-8">Loading statistics...</div>;
+    return <div className="text-center py-8">{t('loading', language)}</div>;
   }
 
   const gmapsConnected = true; // You have API key configured
@@ -20,13 +39,13 @@ const Dashboard = ({ stats, onRefresh }) => {
     }]
   };
 
-  // Road category distribution - OSM data
+  // Road category distribution - OSM data (actual from database)
   const roadCategoryData = {
-    labels: ['Residential', 'Service', 'Unclassified', 'Primary/Secondary', 'Highway/Trunk'],
+    labels: ['Service', 'Footway', 'Residential', 'Secondary', 'Tertiary'],
     datasets: [{
       label: 'Segments',
-      data: [16294466, 5863455, 3472845, 1234678, 292000], // Approximate OSM distribution
-      backgroundColor: ['#10B981', '#F59E0B', '#3B82F6', '#8B5CF6', '#EF4444']
+      data: [12171695, 6033307, 4574991, 765251, 651438],
+      backgroundColor: ['#F59E0B', '#94A3B8', '#10B981', '#3B82F6', '#8B5CF6']
     }]
   };
 
@@ -35,15 +54,15 @@ const Dashboard = ({ stats, onRefresh }) => {
       {/* Stats Cards */}
       <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
         <StatCard
-          title="Total Segments"
-          value={stats.total_roads?.toLocaleString() || '0'}
-          subtitle="27.16M road segments in database"
+          title="Target Cities"
+          value="340"
+          subtitle="Cities mapped (98.3% of 346 target cities)"
           color="blue"
         />
         <StatCard
           title="Unique Roads with Names"
           value={stats.roads_with_names?.toLocaleString() || '0'}
-          subtitle="Available for crawling (grouped by name + county)"
+          subtitle="Available for crawling (in target cities)"
           color="green"
         />
         <StatCard
@@ -60,43 +79,7 @@ const Dashboard = ({ stats, onRefresh }) => {
         />
       </div>
 
-      {/* Charts */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div className="bg-white p-6 rounded-lg shadow">
-          <h3 className="text-lg font-semibold mb-4">Crawl Progress</h3>
-          <p className="text-sm text-gray-600 mb-4">
-            Roads that have been searched for businesses using Google Maps API
-          </p>
-          <div className="h-64">
-            <Doughnut data={coverageData} options={{ maintainAspectRatio: false }} />
-          </div>
-        </div>
-
-        <div className="bg-white p-6 rounded-lg shadow">
-          <h3 className="text-lg font-semibold mb-4">Road Categories in Database</h3>
-          <div className="h-64">
-            <Bar 
-              data={roadCategoryData} 
-              options={{ 
-                maintainAspectRatio: false,
-                plugins: {
-                  legend: { display: false },
-                  tooltip: {
-                    callbacks: {
-                      label: (context) => {
-                        const value = context.parsed.y;
-                        return `${context.label}: ${value.toLocaleString()} roads`;
-                      }
-                    }
-                  }
-                }
-              }} 
-            />
-          </div>
-        </div>
-      </div>
-
-      {/* System Status */}
+      {/* System Status & API Usage Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div className="bg-white p-6 rounded-lg shadow">
           <div className="flex justify-between items-center mb-4">
@@ -111,66 +94,74 @@ const Dashboard = ({ stats, onRefresh }) => {
           
           <div className="space-y-3">
             <StatusItem label="Database" value="Self-hosted PostgreSQL" status="online" />
-            <StatusItem label="Total Size" value="~15 GB" />
-            <StatusItem label="Tables" value="osm_roads_main, counties, states" />
-            <StatusItem label="Indexes" value="9 active" status="online" />
-            <StatusItem label="Query Performance" value="<1ms with cache" status="online" />
+            <StatusItem label="Total Size" value="18 GB (15GB roads + 2.4GB mappings)" />
+            <StatusItem label="Main Tables" value="osm_roads_main (10.48M), road_city_mapping (10.57M)" />
+            <StatusItem label="Coverage" value="340 cities mapped (98.3%)" />
+            <StatusItem label="Query Performance" value="<50ms city-based" status="online" />
           </div>
         </div>
 
         <div className="bg-white p-6 rounded-lg shadow">
-          <h3 className="text-lg font-semibold mb-4">API Usage & Costs</h3>
+          <h3 className="text-lg font-semibold mb-4">API Usage</h3>
           
-          <div className="space-y-3">
-            <StatusItem label="Google Maps API" value={gmapsConnected ? "Connected" : "Not configured"} status={gmapsConnected ? "online" : "offline"} />
-            <StatusItem label="Monthly Free Credit" value="$200" />
-            <StatusItem label="Cost per Road" value="~$0.16 (5 searches)" />
-            <StatusItem label="Budget Remaining" value="$200.00" />
-            
-            <div className="mt-4 p-3 bg-yellow-50 rounded">
-              <p className="text-sm text-yellow-800">
-                <strong>Note:</strong> Each road search costs ~$0.032. 
-                Free tier allows ~6,250 searches/month.
-              </p>
+          {apiUsage && !apiUsage.error ? (
+            <div className="space-y-4">
+              {/* Main stats in grid */}
+              <div className="grid grid-cols-3 gap-3 text-center">
+                <div className="bg-gray-50 p-3 rounded">
+                  <div className="text-2xl font-bold text-blue-600">{apiUsage.total_requests || 0}</div>
+                  <div className="text-xs text-gray-600">API Requests</div>
+                </div>
+                <div className="bg-gray-50 p-3 rounded">
+                  <div className="text-2xl font-bold text-green-600">{apiUsage.total_crawls || 0}</div>
+                  <div className="text-xs text-gray-600">Crawl Sessions</div>
+                </div>
+                <div className="bg-gray-50 p-3 rounded">
+                  <div className="text-2xl font-bold text-purple-600">{apiUsage.total_results || 0}</div>
+                  <div className="text-xs text-gray-600">Businesses</div>
+                </div>
+              </div>
+              
+              {/* Today and Cost in compact format */}
+              <div className="grid grid-cols-2 gap-3">
+                <div className="bg-blue-50 p-3 rounded">
+                  <div className="text-xs font-medium text-blue-700 mb-1">Today</div>
+                  <div className="text-sm">
+                    <span className="font-bold">{apiUsage.today?.crawls || 0}</span> crawls · 
+                    <span className="font-bold"> {apiUsage.today?.estimated_api_calls || 0}</span> calls
+                  </div>
+                </div>
+                <div className="bg-yellow-50 p-3 rounded">
+                  <div className="text-xs font-medium text-yellow-700 mb-1">Cost</div>
+                  <div className="text-sm font-bold text-yellow-800">
+                    {apiUsage.notes?.estimated_cost || '$0.00'}
+                  </div>
+                </div>
+              </div>
+              
+              {/* Top keywords - compact */}
+              {apiUsage.by_keyword && apiUsage.by_keyword.length > 0 && (
+                <div className="text-xs">
+                  <span className="font-medium text-gray-700">Top Keywords: </span>
+                  {apiUsage.by_keyword.slice(0, 3).map((item, idx) => (
+                    <span key={item.keyword} className="text-gray-600">
+                      {idx > 0 && ' · '}
+                      {item.keyword} ({item.crawl_count})
+                    </span>
+                  ))}
+                </div>
+              )}
+              
+              {/* Pricing info - very compact */}
+              <div className="text-xs text-gray-500 border-t pt-2">
+                <div>Text Search: $32/1k requests · Each crawl = 3 requests</div>
+              </div>
             </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Data Quality Metrics */}
-      <div className="bg-white p-6 rounded-lg shadow">
-        <h3 className="text-lg font-semibold mb-4">Data Quality Metrics</h3>
-        
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-          <div>
-            <h4 className="text-sm font-medium text-gray-600 mb-2">Road Segments with Names</h4>
-            <ProgressBar
-              label=""
-              current={7150485}
-              total={27157444}
-            />
-            <p className="text-xs text-gray-500 mt-1">26.3% of segments have names</p>
-          </div>
-          
-          <div>
-            <h4 className="text-sm font-medium text-gray-600 mb-2">Unique Roads (Grouped by Name + County)</h4>
-            <ProgressBar
-              label=""
-              current={2768406}
-              total={7150485}
-            />
-            <p className="text-xs text-gray-500 mt-1">2.77M unique roads (2.6 segments/road avg)</p>
-          </div>
-          
-          <div>
-            <h4 className="text-sm font-medium text-gray-600 mb-2">Import Status</h4>
-            <ProgressBar
-              label=""
-              current={49}
-              total={49}
-            />
-            <p className="text-xs text-gray-500 mt-1">All 49 states imported successfully!</p>
-          </div>
+          ) : (
+            <div className="text-sm text-gray-500 text-center py-4">
+              {apiUsage?.error ? "Loading..." : "Loading API usage..."}
+            </div>
+          )}
         </div>
       </div>
     </div>

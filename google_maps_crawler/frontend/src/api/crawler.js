@@ -7,10 +7,11 @@ export const fetchStats = async () => {
   return response.data;
 };
 
-export const fetchUnprocessedRoads = async (limit = 100, stateCode = null, countyFips = null) => {
+export const fetchUnprocessedRoads = async (limit = 100, stateCode = null, countyFips = null, cityName = null) => {
   const params = { limit };
   if (stateCode) params.state_code = stateCode;
   if (countyFips) params.county_fips = countyFips;
+  if (cityName) params.city_name = cityName;
   
   const response = await axios.get(`${API_BASE_URL}/roads/unprocessed`, {
     params
@@ -36,12 +37,13 @@ export const crawlSingleRoad = async (roadId, keyword) => {
   return response.data;
 };
 
-export const startCrawl = async (stateCode, limit) => {
-  const response = await axios.post(`${API_BASE_URL}/crawl/start`, null, {
-    params: { state_code: stateCode, limit }
-  });
-  return response.data;
-};
+// Deprecated - use crawlSingleRoad instead
+// export const startCrawl = async (stateCode, limit) => {
+//   const response = await axios.post(`${API_BASE_URL}/crawl/start`, null, {
+//     params: { state_code: stateCode, limit }
+//   });
+//   return response.data;
+// };
 
 export const searchRoads = async (query, stateCode = null, countyFips = null, limit = 50) => {
   const params = { 
@@ -52,6 +54,17 @@ export const searchRoads = async (query, stateCode = null, countyFips = null, li
   if (countyFips) params.county_fips = countyFips;
   
   const response = await axios.get(`${API_BASE_URL}/roads/search`, { params });
+  return response.data;
+};
+
+export const searchRoadsWithCoords = async (query, stateCode = null, limit = 50) => {
+  const params = { 
+    q: query,
+    limit 
+  };
+  if (stateCode) params.state_code = stateCode;
+  
+  const response = await axios.get(`${API_BASE_URL}/roads/search-with-coords`, { params });
   return response.data;
 };
 
@@ -71,12 +84,42 @@ export const fetchBusinessesForRoad = async (roadId) => {
   };
 };
 
-export const fetchCountiesByState = async (stateCode) => {
-  const response = await axios.get(`${API_BASE_URL}/counties/${stateCode}`);
-  return response.data;
-};
+// Deprecated - using city-based approach now
+// export const fetchCountiesByState = async (stateCode) => {
+//   const response = await axios.get(`${API_BASE_URL}/counties/${stateCode}`);
+//   return response.data;
+// };
 
 export const fetchStatesSummary = async () => {
   const response = await axios.get(`${API_BASE_URL}/states/summary`);
+  return response.data;
+};
+
+export const fetchTargetCities = async (stateCode = null) => {
+  const params = {};
+  if (stateCode) params.state_code = stateCode;
+  
+  const response = await axios.get(`${API_BASE_URL}/roads/target-cities`, { params });
+  return response.data;
+};
+
+export const fetchRoadsByCity = async (cityName, stateCode, limit = 100) => {
+  const response = await axios.get(`${API_BASE_URL}/roads/by-city`, {
+    params: {
+      city_name: cityName,
+      state_code: stateCode,
+      limit
+    }
+  });
+  return response.data;
+};
+
+export const fetchCityStats = async (cityName, stateCode) => {
+  const response = await axios.get(`${API_BASE_URL}/roads/city-stats`, {
+    params: {
+      city_name: cityName,
+      state_code: stateCode
+    }
+  });
   return response.data;
 };

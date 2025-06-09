@@ -286,7 +286,7 @@ const CrawlControl = ({ onCrawlStart }) => {
     for (let i = 0; i < roadsToProcess.length; i++) {
       const road = roadsToProcess[i];
       const timeElapsed = Date.now() - startTime;
-      const avgTimePerRoad = i > 0 ? timeElapsed / i : 3000; // Estimate 3s for first road
+      const avgTimePerRoad = i > 0 ? timeElapsed / i : 10000; // Estimate 10s for first road
       const remainingRoads = roadsToProcess.length - i - 1;
       const estimatedTimeRemaining = remainingRoads * avgTimePerRoad;
       
@@ -300,6 +300,16 @@ const CrawlControl = ({ onCrawlStart }) => {
       
       try {
         await handleCrawlSingleRoad(road);
+        
+        // Wait 10 seconds between API calls to avoid quota issues
+        if (i < roadsToProcess.length - 1) {
+          // Show countdown during wait
+          for (let countdown = 10; countdown > 0; countdown--) {
+            setBulkCrawlProgress(prev => ({ ...prev, waitingTime: countdown }));
+            await new Promise(resolve => setTimeout(resolve, 1000));
+          }
+          setBulkCrawlProgress(prev => ({ ...prev, waitingTime: null }));
+        }
       } catch (error) {
         console.error(`Failed to crawl road ${road.name}:`, error);
       }
@@ -734,23 +744,22 @@ const CrawlControl = ({ onCrawlStart }) => {
                   <span className="text-sm text-blue-700">
                     {selectedRoads.size} {language === 'vi' ? 'đường đã chọn' : 'roads selected'}
                   </span>
-                  <button
-                    onClick={() => {
-                      // Select all visible roads
-                      const allRoadIds = new Set(paginatedRoads.map(r => r.osm_id));
-                      setSelectedRoads(allRoadIds);
-                    }}
-                    className="text-sm text-blue-600 hover:text-blue-800"
-                  >
-                    {language === 'vi' ? 'Chọn tất cả trang này' : 'Select all on page'}
-                  </button>
-                  <button
-                    onClick={() => setSelectedRoads(new Set())}
-                    className="text-sm text-blue-600 hover:text-blue-800"
-                  >
-                    {language === 'vi' ? 'Bỏ chọn tất cả' : 'Clear selection'}
-                  </button>
-                </div>
+                <button
+                  onClick={() => {
+                    // Select all visible roads
+                    const allRoadIds = new Set(paginatedRoads.map(r => r.osm_id));
+                    setSelectedRoads(allRoadIds);
+                  }}
+                  className="text-sm text-blue-600 hover:text-blue-800"
+                >
+                  {language === 'vi' ? 'Chọn tất cả trang này' : 'Select all on page'}
+                </button>
+                <button
+                  onClick={() => setSelectedRoads(new Set())}
+                  className="text-sm text-blue-600 hover:text-blue-800"
+                >
+                  {language === 'vi' ? 'Bỏ chọn tất cả' : 'Clear selection'}
+                </button>
               </div>
               <button
                 onClick={handleBulkCrawl}
@@ -762,7 +771,10 @@ const CrawlControl = ({ onCrawlStart }) => {
                     <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2"></div>
                     <div className="text-left">
                       <div>{language === 'vi' ? `Đang crawl ${bulkCrawlProgress.current}/${bulkCrawlProgress.total}` : `Crawling ${bulkCrawlProgress.current}/${bulkCrawlProgress.total}`}</div>
-                      {bulkCrawlProgress.estimatedTimeRemaining && (
+                      {bulkCrawlProgress.waitingTime && (
+                        <div className="text-xs">{language === 'vi' ? `Chờ ${bulkCrawlProgress.waitingTime}s...` : `Wait ${bulkCrawlProgress.waitingTime}s...`}</div>
+                      )}
+                      {bulkCrawlProgress.estimatedTimeRemaining && !bulkCrawlProgress.waitingTime && (
                         <div className="text-xs">
                           {language === 'vi' ? `Còn ~${Math.ceil(bulkCrawlProgress.estimatedTimeRemaining / 60000)} phút` : `~${Math.ceil(bulkCrawlProgress.estimatedTimeRemaining / 60000)} min remaining`}
                         </div>
