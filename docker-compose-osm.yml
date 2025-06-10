@@ -11,6 +11,8 @@ services:
     command: /bin/sh
     stdin_open: true
     tty: true
+    networks:
+      - data_us_100k_pop_default
 
   gdal-processor:
     image: ghcr.io/osgeo/gdal:ubuntu-small-latest
@@ -23,6 +25,8 @@ services:
     command: /bin/bash
     stdin_open: true
     tty: true
+    networks:
+      - data_us_100k_pop_default
 
   osm-python:
     build:
@@ -37,3 +41,9 @@ services:
     command: /bin/bash
     stdin_open: true
     tty: true
+    networks:
+      - data_us_100k_pop_default
+
+networks:
+  data_us_100k_pop_default:
+    external: true

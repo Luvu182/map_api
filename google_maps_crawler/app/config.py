@@ -26,7 +26,7 @@ REDIS_URL = os.getenv("REDIS_URL", "redis://localhost:6379/0")
 # Crawler settings
 CRAWLER_BATCH_SIZE = int(os.getenv("CRAWLER_BATCH_SIZE", "50"))
 CRAWLER_DELAY_SECONDS = float(os.getenv("CRAWLER_DELAY_SECONDS", "1"))
-MAX_RESULTS_PER_LOCATION = int(os.getenv("MAX_RESULTS_PER_LOCATION", "20"))
+MAX_RESULTS_PER_LOCATION = int(os.getenv("MAX_RESULTS_PER_LOCATION", "60"))
 SEARCH_RADIUS_METERS = int(os.getenv("SEARCH_RADIUS_METERS", "50"))
 
 # Rate limiting

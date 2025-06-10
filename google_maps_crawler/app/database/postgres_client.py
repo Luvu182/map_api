@@ -6,6 +6,9 @@ import os
 sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(__file__)))))
 
 from scripts.database_config import get_db_connection, execute_query
+
+# Re-export for compatibility
+get_connection = get_db_connection
 from typing import List, Optional, Dict
 import logging
 from ..models import Road, Business, CrawlJob
@@ -189,70 +192,70 @@ class PostgresClient:
         except Exception as e:
             logger.error(f"Error updating crawl job: {e}")
     
-    def get_unique_road_names(self, limit: int = 100, state_code: str = None, county_fips: str = None) -> List[Dict]:
-        """Get unique road names from OSM data"""
+    def get_unique_road_names(self, limit: int = 100, state_code: str = None, county_fips: str = None, city_name: str = None) -> List[Dict]:
+        """Get unique road names from OSM data ordered by business potential"""
         try:
-            query = """
-                SELECT 
-                    MIN(osm_id) as osm_id,
-                    name,
-                    highway,
-                    CASE 
-                        WHEN highway IN ('motorway','trunk') THEN 'Primary Roads'
-                        WHEN highway IN ('primary','secondary','tertiary') THEN 'Secondary Roads'
-                        WHEN highway IN ('residential','unclassified') THEN 'Local Streets'
-                        ELSE 'Special Roads'
-                    END as road_category,
-                    county_fips,
-                    state_code,
-                    COUNT(*) as segment_count,
-                    SUM(ST_Length(geography(geometry))) / 1000.0 as total_length_km,
-                    CASE 
-                        WHEN highway IN ('motorway','trunk','primary','secondary') THEN highway
-                        ELSE 'local road'
-                    END as feature_class,
-                    CASE 
-                        WHEN highway IN ('motorway','trunk','primary') THEN 'high'
-                        WHEN highway IN ('secondary','tertiary') THEN 'medium'
-                        WHEN highway = 'residential' THEN 'medium'
-                        ELSE 'low'
-                    END as business_likelihood
-                FROM osm_roads_main
-                WHERE name IS NOT NULL
-            """
-            params = []
-            
-            if state_code:
-                query += " AND state_code = %s"
-                params.append(state_code)
-                
-            if county_fips:
-                query += " AND county_fips = %s"
-                params.append(county_fips)
-                
-            query += """
-                GROUP BY name, highway, county_fips, state_code
-                ORDER BY name
-                LIMIT %s
-            """
-            params.append(limit)
-            
-            results = execute_query(query, params)
+            # If city_name is provided, filter by city
+            if city_name and state_code:
+                query = """
+                    SELECT 
+                        r.osm_id,
+                        r.name,
+                        r.highway,
+                        r.county_fips,
+                        rcm.state_code,
+                        rcm.city_name as city_names,
+                        COUNT(*) OVER (PARTITION BY r.name, r.county_fips) as segment_count,
+                        ST_Length(r.geometry::geography) / 1000 as total_length_km,
+                        ST_Y(ST_Centroid(r.geometry)) as center_lat,
+                        ST_X(ST_Centroid(r.geometry)) as center_lon,
+                        CASE 
+                            WHEN r.highway IN ('primary', 'secondary', 'tertiary') THEN 80
+                            WHEN r.highway IN ('residential', 'living_street') THEN 60
+                            WHEN r.highway IN ('unclassified', 'service') THEN 40
+                            ELSE 20
+                        END as business_potential_score,
+                        CASE 
+                            WHEN r.highway IN ('primary', 'secondary', 'tertiary') THEN 'major'
+                            WHEN r.highway IN ('residential', 'living_street') THEN 'local'
+                            ELSE 'other'
+                        END as business_category
+                    FROM osm_roads_main r
+                    INNER JOIN road_city_mapping rcm ON r.id = rcm.road_id
+                    WHERE rcm.city_name = %s AND rcm.state_code = %s
+                        AND r.name IS NOT NULL
+                    ORDER BY business_potential_score DESC, r.name
+                    LIMIT %s
+                """
+                params = [city_name, state_code, limit]
+                results = execute_query(query, params)
+            else:
+                # Original logic for state/county filtering
+                query = "SELECT * FROM get_top_business_roads(%s, %s, %s)"
+                params = [state_code, county_fips, limit]
+                results = execute_query(query, params)
             
             # Map fields to match frontend expectations
             formatted_results = []
             for row in results:
+                city_names = row.get('city_names', '')
                 formatted_results.append({
                     'osm_id': row['osm_id'],
                     'name': row['name'],
                     'highway': row['highway'],
-                    'road_category': row['road_category'],
+                    'road_category': row['business_category'],
                     'county_fips': row['county_fips'],
                     'state_code': row['state_code'],
                     'segment_count': row['segment_count'],
-                    'total_length_km': row['total_length_km'],
-                    'feature_class': row['feature_class'],
-                    'business_likelihood': row['business_likelihood']
+                    'total_length_km': float(row['total_length_km']) if row['total_length_km'] else 0,
+                    'center_lat': row['center_lat'],
+                    'center_lon': row['center_lon'],
+                    'business_potential_score': row['business_potential_score'],
+                    'estimated_city': city_names,
+                    'city_names': city_names,  # Include full city list
+                    'display_name': f"{row['name']} ({city_names})" if city_names else row['name'],
+                    'feature_class': row['highway'],  # Use highway type as feature class
+                    'business_likelihood': 'high' if row['business_potential_score'] >= 70 else 'medium' if row['business_potential_score'] >= 40 else 'low'
                 })
             
             return formatted_results
@@ -320,7 +323,7 @@ class PostgresClient:
                 params.append(keyword)
             
             if state_code or county_fips:
-                road_query = "SELECT linearid FROM roads WHERE 1=1"
+                road_query = "SELECT osm_id FROM osm_roads_main WHERE 1=1"
                 road_params = []
                 
                 if state_code:
@@ -330,10 +333,10 @@ class PostgresClient:
                     road_query += " AND county_fips = %s"
                     road_params.append(county_fips)
                 
-                road_ids = [r['linearid'] for r in execute_query(road_query, road_params)]
+                road_ids = [r['osm_id'] for r in execute_query(road_query, road_params)]
                 if road_ids:
                     placeholders = ','.join(['%s'] * len(road_ids))
-                    query += f" AND road_linearid IN ({placeholders})"
+                    query += f" AND road_osm_id IN ({placeholders})"
                     params.extend(road_ids)
             
             return execute_query(query, params if params else None)
@@ -368,15 +371,35 @@ class PostgresClient:
         try:
             stats = {}
             
-            # Roads processed
-            query = "SELECT COUNT(*) as count FROM crawl_jobs WHERE status = 'completed'"
-            result = execute_query(query, fetch_one=True)
-            stats['roads_processed'] = result['count'] if result else 0
+            # Roads processed - count unique roads crawled from crawl_sessions
+            try:
+                query = "SELECT COUNT(DISTINCT road_osm_id) as count FROM crawl_sessions WHERE status = 'completed'"
+                result = execute_query(query, fetch_one=True)
+                stats['roads_processed'] = result['count'] if result else 0
+            except Exception as e:
+                logger.error(f"Error getting roads processed: {e}")
+                stats['roads_processed'] = 0
             
-            # Total businesses
-            query = "SELECT COUNT(*) as count FROM businesses"
-            result = execute_query(query, fetch_one=True)
-            stats['businesses_found'] = result['count'] if result else 0
+            # Total businesses from crawl sessions
+            try:
+                query = """
+                    SELECT 
+                        SUM(businesses_found) as total_businesses,
+                        COUNT(DISTINCT road_osm_id) as roads_with_businesses
+                    FROM crawl_sessions 
+                    WHERE status = 'completed' AND businesses_found > 0
+                """
+                result = execute_query(query, fetch_one=True)
+                stats['businesses_found'] = int(result['total_businesses']) if result and result['total_businesses'] else 0
+            except Exception as e:
+                logger.error(f"Error getting businesses found: {e}")
+                # Fallback to businesses table count
+                try:
+                    query = "SELECT COUNT(*) as count FROM businesses"
+                    result = execute_query(query, fetch_one=True)
+                    stats['businesses_found'] = result['count'] if result else 0
+                except:
+                    stats['businesses_found'] = 0
             
             stats['avg_businesses_per_road'] = (
                 stats['businesses_found'] / stats['roads_processed'] 
@@ -387,9 +410,37 @@ class PostgresClient:
         except Exception as e:
             logger.error(f"Error getting stats: {e}")
             return {}
+    
+    def initialize_api_tracking(self):
+        """Create API tracking table if it doesn't exist"""
+        try:
+            execute_query("""
+                CREATE TABLE IF NOT EXISTS api_calls (
+                    id SERIAL PRIMARY KEY,
+                    api_type VARCHAR(50) NOT NULL,
+                    endpoint VARCHAR(255),
+                    request_count INTEGER DEFAULT 1,
+                    session_id VARCHAR(255),
+                    road_osm_id BIGINT,
+                    keyword VARCHAR(255),
+                    response_count INTEGER,
+                    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+                )
+            """)
+            
+            # Create indexes
+            execute_query("CREATE INDEX IF NOT EXISTS idx_api_calls_created_at ON api_calls(created_at)")
+            execute_query("CREATE INDEX IF NOT EXISTS idx_api_calls_api_type ON api_calls(api_type)")
+            
+            logger.info("API tracking table initialized")
+        except Exception as e:
+            logger.error(f"Error initializing API tracking: {e}")
 
 # Create a default instance
 postgres_client = PostgresClient()
+
+# Initialize API tracking on startup
+postgres_client.initialize_api_tracking()
 
 # Export execute_query for direct use
 from scripts.database_config import execute_query

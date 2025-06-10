@@ -23,20 +23,23 @@ CREATE EXTENSION postgis;
 # Create tables (see ARCHITECTURE.md)
 psql -U postgres -d roads_db -f schema.sql
 
-# Import processed data
-ogr2ogr -f PostgreSQL PG:"dbname=roads_db user=postgres" roads_hierarchy.geojson -nln roads
+# Import OSM data
+python scripts/import_all_osm_direct.py
+
+# Import city boundaries for accurate mapping
+./scripts/run_boundary_import.sh all
 ```
 
 ### Create Indexes
 ```sql
 -- Spatial indexes
-CREATE INDEX idx_roads_geom ON roads USING GIST(geometry);
-CREATE INDEX idx_counties_geom ON counties USING GIST(geometry);
+CREATE INDEX idx_osm_roads_geom ON osm_roads_main USING GIST(geometry);
+CREATE INDEX idx_city_boundaries_geom ON city_boundaries USING GIST(geometry);
 
 -- Regular indexes
-CREATE INDEX idx_roads_county ON roads(county_fips);
-CREATE INDEX idx_roads_category ON roads(category);
-CREATE INDEX idx_roads_name ON roads(fullname);
+CREATE INDEX idx_osm_roads_county ON osm_roads_main(county_fips);
+CREATE INDEX idx_osm_roads_highway ON osm_roads_main(highway);
+CREATE INDEX idx_osm_roads_name ON osm_roads_main(name);
 ```
 
 ## API Server (Node.js/Express)
@@ -74,19 +77,20 @@ app.get('/api/counties/:stateFips', async (req, res) => {
 ```
 ### Road Query Endpoints
 ```javascript
-app.get('/api/roads/:countyFips/:category', async (req, res) => {
-  const { countyFips, category } = req.params;
+app.get('/api/roads/:countyFips/:highway', async (req, res) => {
+  const { countyFips, highway } = req.params;
   const { limit = 100, offset = 0 } = req.query;
   
   const result = await pool.query(`
     SELECT 
-      linearid, fullname, rttyp, length_m,
+      osm_id, name, highway, ref,
+      ST_Length(geometry::geography) as length_m,
       ST_AsGeoJSON(ST_Simplify(geometry, 0.0001)) as geojson
-    FROM roads 
-    WHERE county_fips = $1 AND category = $2
+    FROM osm_roads_main 
+    WHERE county_fips = $1 AND highway = $2
     ORDER BY length_m DESC
     LIMIT $3 OFFSET $4
-  `, [countyFips, category, limit, offset]);
+  `, [countyFips, highway, limit, offset]);
   
   res.json(result.rows);
 });
@@ -112,8 +116,8 @@ async function loadRoads(countyFips, category) {
     new google.maps.Polyline({
       path: path.map(coord => ({ lat: coord[1], lng: coord[0] })),
       map: map,
-      strokeColor: getCategoryColor(category),
-      strokeWeight: getCategoryWeight(category)
+      strokeColor: getHighwayColor(road.highway),
+      strokeWeight: getHighwayWeight(road.highway)
     });
   });
 }

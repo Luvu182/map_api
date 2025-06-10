@@ -1,0 +1,11 @@
+{
+  "created_at": "2025-06-06T19:35:49.534346",
+  "total_counties": 323,
+  "total_states": 49,
+  "total_roads": 5203313,
+  "area_stats": {
+    "min_sqkm": 46.71,
+    "max_sqkm": 55895.72,
+    "avg_sqkm": 3693.16
+  }
+}

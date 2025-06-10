@@ -23,9 +23,9 @@
 ```
 
 ### Cấp 4: Individual Roads (Đường cụ thể)
-- Tên đầy đủ (FULLNAME)
-- ID duy nhất (LINEARID)
-- Metadata: RTTYP, độ dài, tọa độ
+- Tên đầy đủ (name from OSM)
+- ID duy nhất (osm_id)
+- Metadata: highway type, lanes, surface, độ dài, tọa độ
 
 ## Ví dụ Navigation Flow
 ```
@@ -46,7 +46,7 @@
 
 ## Database Structure (Self-hosted PostgreSQL)
 
-### Table: states (51 records)
+### Table: states (49 records)
 ```sql
 state_code  VARCHAR(2) PRIMARY KEY  -- AL, CA...
 state_name  VARCHAR(50) NOT NULL
@@ -63,70 +63,82 @@ total_roads INTEGER DEFAULT 0
 created_at  TIMESTAMP WITH TIME ZONE
 ```
 
-### Table: cities (15 major cities)
+### Table: city_boundaries (OSM boundaries)
 ```sql
-city_id    SERIAL PRIMARY KEY
-city_name  VARCHAR(100) NOT NULL
-state_code VARCHAR(2) REFERENCES states(state_code)
-population INTEGER
-total_roads INTEGER DEFAULT 0
-created_at  TIMESTAMP WITH TIME ZONE
+osm_id      BIGINT PRIMARY KEY
+name        TEXT NOT NULL
+state_code  VARCHAR(2)
+admin_level INTEGER                 -- 8 for cities
+geometry    GEOMETRY(Geometry, 4326)
+tags        JSONB
+created_at  TIMESTAMP DEFAULT NOW()
 ```
 
-### Table: city_counties (21 mappings)
+### Table: road_city_mapping (Accurate boundary-based mapping)
 ```sql
-city_id     INTEGER REFERENCES cities(city_id)
-county_fips VARCHAR(5) REFERENCES counties(county_fips)
-PRIMARY KEY (city_id, county_fips)
+osm_id      BIGINT REFERENCES osm_roads_main(osm_id)
+city_name   TEXT
+state_code  VARCHAR(2)
+mapping_type VARCHAR(20)  -- 'within' or 'nearest'
+distance_km NUMERIC
+PRIMARY KEY (osm_id)
 ```
 
-### Table: roads (5,155,787 records)
+### Table: osm_roads_main (27M+ records)
 ```sql
-id          BIGSERIAL PRIMARY KEY
-linearid    VARCHAR(30) UNIQUE NOT NULL
-fullname    TEXT                    -- 33.5% are NULL
-rttyp       VARCHAR(1)              -- Route type
-mtfcc       VARCHAR(5)              -- Feature class
-road_category VARCHAR(20)           -- Derived category
-county_fips VARCHAR(5) REFERENCES counties(county_fips)
-state_code  VARCHAR(2) REFERENCES states(state_code)
+osm_id      BIGINT PRIMARY KEY      -- OSM unique ID
+name        TEXT                    -- Road name (26.3% have names)
+highway     VARCHAR(100)            -- OSM road type
+ref         VARCHAR(150)            -- Road reference (I-5, US-101)
+state_code  VARCHAR(2)
+county_fips VARCHAR(10)
+geometry    GEOMETRY(LINESTRING, 4326)
+tags        JSONB                   -- Additional OSM metadata
+lanes       INTEGER
+maxspeed    VARCHAR(100)
+surface     VARCHAR(200)
+oneway      VARCHAR(50)
 created_at  TIMESTAMP WITH TIME ZONE
 ```
 
 ### Indexes for Performance
 ```sql
-CREATE INDEX idx_roads_fullname ON roads(fullname);
-CREATE INDEX idx_roads_county ON roads(county_fips);
-CREATE INDEX idx_roads_state ON roads(state_code);
-CREATE INDEX idx_roads_category ON roads(road_category);
-CREATE INDEX idx_roads_mtfcc ON roads(mtfcc);
-CREATE INDEX idx_roads_fullname_trgm ON roads USING gin(fullname gin_trgm_ops);
+-- Spatial indexes
+CREATE INDEX idx_osm_roads_geom ON osm_roads_main USING GIST(geometry);
+CREATE INDEX idx_city_boundaries_geom ON city_boundaries USING GIST(geometry);
+
+-- Regular indexes
+CREATE INDEX idx_osm_roads_name ON osm_roads_main(name);
+CREATE INDEX idx_osm_roads_county ON osm_roads_main(county_fips);
+CREATE INDEX idx_osm_roads_state ON osm_roads_main(state_code);
+CREATE INDEX idx_osm_roads_highway ON osm_roads_main(highway);
+CREATE INDEX idx_osm_roads_name_trgm ON osm_roads_main USING gin(name gin_trgm_ops);
 ```
 
 ### Views
 ```sql
--- city_roads: Easy access to roads by city
+-- city_roads: Easy access to roads by city (using accurate boundaries)
 CREATE VIEW city_roads AS
-SELECT c.city_name, c.state_code, r.*
-FROM roads r
-JOIN city_counties cc ON r.county_fips = cc.county_fips
-JOIN cities c ON cc.city_id = c.city_id;
+SELECT rcm.city_name, rcm.state_code, r.*
+FROM osm_roads_main r
+JOIN road_city_mapping rcm ON r.osm_id = rcm.osm_id;
 
--- road_statistics: Materialized view for fast stats
-CREATE MATERIALIZED VIEW road_statistics AS
-SELECT state_code, COUNT(*) as total_roads, 
-       COUNT(CASE WHEN mtfcc = 'S1100' THEN 1 END) as primary_roads,
-       COUNT(CASE WHEN mtfcc = 'S1200' THEN 1 END) as secondary_roads,
-       COUNT(CASE WHEN mtfcc = 'S1400' THEN 1 END) as local_streets,
-       COUNT(CASE WHEN mtfcc NOT IN ('S1100','S1200','S1400') THEN 1 END) as special_roads
-FROM roads GROUP BY state_code;
+-- road_statistics: Fast stats using cache table
+CREATE TABLE osm_stats_cache (
+    id INTEGER PRIMARY KEY DEFAULT 1,
+    total_segments BIGINT,
+    segments_with_names BIGINT,
+    unique_roads_with_names BIGINT,
+    last_updated TIMESTAMP
+);
 ```
 
-## API Endpoints đề xuất
+## API Endpoints
 ```
 GET /states                    # List all states
 GET /states/{state}/counties   # Counties in state
-GET /counties/{fips}/roads     # Road types in county
-GET /counties/{fips}/roads/{type}  # Roads by type
-GET /roads/{linearid}          # Road details
+GET /counties/{fips}/roads     # Roads in county
+GET /cities/{city}/roads       # Roads within city boundaries
+GET /roads/{osm_id}            # Road details
+GET /api/analyze-location      # Business potential analysis
 ```

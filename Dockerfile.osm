@@ -1,0 +1,30 @@
+FROM python:3.11-slim
+
+# Install system dependencies
+RUN apt-get update && apt-get install -y \
+    build-essential \
+    cmake \
+    libboost-dev \
+    libexpat1-dev \
+    zlib1g-dev \
+    libbz2-dev \
+    libproj-dev \
+    libgeos-dev \
+    libgdal-dev \
+    git \
+    && rm -rf /var/lib/apt/lists/*
+
+# Install Python packages
+RUN pip install --no-cache-dir \
+    osmium \
+    geopandas \
+    shapely \
+    pandas \
+    psycopg2-binary \
+    sqlalchemy \
+    tqdm
+
+# Create working directory
+WORKDIR /data
+
+CMD ["/bin/bash"]
